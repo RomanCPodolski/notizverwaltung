@@ -8,6 +8,11 @@ Notizverwaltung::Application.routes.draw do
 resources :notes
   root to: "welcome#index"
 
+
+
+#note GET    /notes/:id(.:format)      notes#show
+
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
