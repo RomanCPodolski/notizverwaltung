@@ -1,0 +1,12 @@
+<h1>Neue Notiz</h1>
+
+<%= form_for :note, url: notes_path do |f| %>
+  <p>
+    <%= f.label :text %><br>
+    <%= f.text_area :text %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
