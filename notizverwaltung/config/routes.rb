@@ -1,9 +1,8 @@
 Notizverwaltung::Application.routes.draw do
-  get "login/register"
-  get "login/index"
+  # get "login/register"
+  # get "login/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
 
 resources :notes
   root to: "welcome#index"

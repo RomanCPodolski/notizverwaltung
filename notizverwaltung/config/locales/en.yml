@@ -21,3 +21,4 @@
 
 en:
   hello: "Hello world"
+  valid_email: "Please enter a valid email address"
