@@ -1,13 +1,14 @@
     <div class="container">
 
       <form class="form-signin">
-        <h2 class="form-signin-heading">Please sign in</h2>
+        <h2 class="form-signin-heading"><%=t('form-signin-heading')%></h2>
         <input class="input-block-level" placeholder="Email address" type="text">
         <input class="input-block-level" placeholder="Password" type="password">
         <label class="checkbox">
-          <input value="remember-me" type="checkbox"> Remember me
+          <input value="remember-me" type="checkbox"><%=t('remember-me')%>
         </label>
-        <button class="btn btn-large btn-primary" type="submit">Sign in</button>
+        <button class="btn btn-large btn-primary" type="submit"><%=t('sign_in')%></button>
+        <button class="btn btn-large btn-primary"><%=t('register')%><%= link_to user_register_path%></button>
       </form>
 
     </div>

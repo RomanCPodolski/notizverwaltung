@@ -20,5 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  sign_in: "Sign in"
+  register: "Register"
   valid_email: "Please enter a valid email address"
+  remember-me: "Remember me"
+  form-signin-heading: "Please Sign in"
