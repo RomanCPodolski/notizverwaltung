@@ -1,11 +1,16 @@
 Notizverwaltung::Application.routes.draw do
+  get "user/login"
+  get "user/register"
+  get "user/logout"
+  get "user/delete"
+  get "user/update"
   # get "login/register"
   # get "login/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
 resources :notes
-  root to: "welcome#index"
+root to: "user#login"
 
 
 

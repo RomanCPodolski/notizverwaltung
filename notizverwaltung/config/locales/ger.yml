@@ -21,3 +21,4 @@
 
 ger:
   hello: "Hallo Welt"
+  valid_email: "Bitte geben sie eine gültige Email adresse ein"
