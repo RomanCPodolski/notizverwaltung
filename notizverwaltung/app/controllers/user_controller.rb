@@ -1,4 +1,4 @@
-class UserController < ApplicationController
+lass UserController < ApplicationController
   def login
   end
 
