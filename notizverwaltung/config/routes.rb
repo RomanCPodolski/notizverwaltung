@@ -1,4 +1,5 @@
 Notizverwaltung::Application.routes.draw do
+  get "notes/index"
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   get "user/login"
@@ -11,16 +12,13 @@ Notizverwaltung::Application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-resources :notes
-root to: "user#login"
+resources :notes, :users
 
-
-
-#note GET    /notes/:id(.:format)      notes#show
-
+#get 'notes/:id', :controller => 'notes_controller', :action => 'show'
+get 'notes/:id' => 'notes#show'
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+root 'notes#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
