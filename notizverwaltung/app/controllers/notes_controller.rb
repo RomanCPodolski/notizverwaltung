@@ -1,11 +1,13 @@
 class NotesController < ApplicationController
 	
+	def index
+		@notes = Note.all
+	end
 
 	def new
 	end
 
 	def create
-		#render text: params[:note].inspect
 		@note = Note.new(note_params)
 		@note.save
 		redirect_to @note
@@ -17,6 +19,6 @@ class NotesController < ApplicationController
 
 	private
 		def note_params
-			params.require(:note).permit(:text)
+			params.require(:note).permit(:message)
 		end
 end
