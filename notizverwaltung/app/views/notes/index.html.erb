@@ -1,0 +1,17 @@
+<h1>Notes#index</h1>
+<p>Find me in app/views/notes/index.html.erb</p>
+
+<table>
+	<tr>
+    	<th>id</th>
+    	<th>Notiz</th>
+  	</tr>
+ 	<% @notes.to_a.each do |note| %>
+ 	<tr>
+		<td><%= note.id %></td>
+		<td><%= note.message %></td>
+		<td><%= button_to "löschen", note_path(note), :id => "", :class => "inbox-sf-add-btn tip", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	</tr>
+	<% end %>
+</table>
+<%= button_to "Neue Notiz", new_note_path, :id => "", :class => "inbox-sf-add-btn tip", :method => :get %>
