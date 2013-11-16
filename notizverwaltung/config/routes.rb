@@ -17,6 +17,7 @@ resources :notes, :users, :comments
 get 'notes/:id' => 'notes#show'
 get 'notes/:id/edit' => 'notes#edit'
 post 'notes/search' => 'notes#search'
+post 'notes/export_json' => 'notes#export_json'
 
   # You can have the root of your site routed with "root"
 root 'notes#index'

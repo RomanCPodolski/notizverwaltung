@@ -45,6 +45,17 @@ class NotesController < ApplicationController
 	  @notes = Note.search params[:search]
 	end
 
+	def export_json
+		@notes = Note.all
+		@notelist = @notes.map do |note|
+		 	{:id => note.id, :text => note.message}
+		end
+    	send_data(@notelist.to_json, :filename => "export.json")
+	end
+
+	def import_json
+	end
+
 	private
 		def note_params
 			params.require(:note).permit(:message)

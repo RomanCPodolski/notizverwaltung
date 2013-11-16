@@ -17,4 +17,6 @@
 	<% end %>
 </table>
 <%= button_to "Neue Notiz", new_note_path, :class => "inbox-sf-add-btn tip", :method => :get %>
-<%= button_to "Json Export", '/notes.json', :class => "inbox-sf-add-btn tip", :method => :get %>
+
+<!--%= link_to "Json Export", '/notes.json', :action => 'download', :class => "inbox-sf-add-btn tip", :method => :get %-->
+<%= button_to "Json Export", :controller => 'notes', :action => 'export_json',   :method => :post %>
