@@ -13,7 +13,11 @@
 	<div id="footer">
 	  <div class="container">
 	    <p class="muted credit"> 
-    		<%= render :partial => 'notes/search' %>
+	    	<div style="float: left; width: auto;">
+	    		<!--%= link_to "Json Export", '/notes.json', :action => 'download', :class => "inbox-sf-add-btn tip", :method => :get %-->
+				<%= button_to "Export", :controller => 'notes', :action => 'export_json',   :method => :post %>
+			</div>
+			<%= render :partial => 'notes/search' %>
   		</p>
   	  </div>
 	</div>
