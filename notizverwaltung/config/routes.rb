@@ -15,6 +15,7 @@ Notizverwaltung::Application.routes.draw do
 resources :notes, :users
 
 get 'notes/:id' => 'notes#show'
+get 'notes/:id/edit' => 'notes#edit'
 
   # You can have the root of your site routed with "root"
 root 'notes#index'
