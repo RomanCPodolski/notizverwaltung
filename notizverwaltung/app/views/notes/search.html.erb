@@ -1,0 +1,10 @@
+<h2>Such Ergebnis<h2>
+
+<ul>
+	<% @notes.each do |note| %>
+  		<li><%= link_to note.message, :action => 'show', :id => note.id  %></li>
+  	<% end %>
+</ul>
+<p>
+	<%= button_to "Zurück", notes_path, :class => "inbox-sf-add-btn tip", :method => :get %>
+</p>
