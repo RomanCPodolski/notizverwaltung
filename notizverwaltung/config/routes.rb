@@ -16,7 +16,6 @@ resources :notes, :users
 
 get 'notes/:id' => 'notes#show'
 get 'notes/:id/edit' => 'notes#edit'
-#get 'notes/search' => 'notes#search'
 post 'notes/search' => 'notes#search'
 
   # You can have the root of your site routed with "root"

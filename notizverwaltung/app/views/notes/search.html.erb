@@ -2,7 +2,7 @@
 
 <ul>
 	<% @notes.each do |note| %>
-  		<li><%= link_to note.message, :action => 'show', :id => note.id  %></li>
+  		<li><%= link_to note.message, :action => 'edit', :id => note.id  %></li>
   	<% end %>
 </ul>
 <p>
