@@ -10,9 +10,11 @@
  	<tr>
 		<td><%= note.id %></td>
 		<td><%= note.message %></td>
-		<td><%= button_to "löschen", note_path(note), :id => "", :class => "inbox-sf-add-btn tip", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+		<td><%= button_to "löschen", note_path(note), :id => "", :class => "inbox-sf-add-btn tip", method: :delete, data: { confirm: 'wirklich löschen?' } %></td>
 		<td><%= button_to "bearbeiten", edit_note_path(note), :id => "", :class => "inbox-sf-add-btn tip", method: :get %></td>
 	</tr>
 	<% end %>
 </table>
-<%= button_to "Neue Notiz", new_note_path, :id => "", :class => "inbox-sf-add-btn tip", :method => :get %>
+<%= button_to "Neue Notiz", new_note_path, :class => "inbox-sf-add-btn tip", :method => :get %>
+<%= button_to "Json Export", '/notes.json', :class => "inbox-sf-add-btn tip", :method => :get %>

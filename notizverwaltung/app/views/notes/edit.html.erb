@@ -18,8 +18,23 @@
   </p>
  
   <p>
-    <%= f.submit %>
-    <%= button_to "Zurück", notes_path, :class => "inbox-sf-add-btn tip", :method => :get %>
+    <%= f.submit "speichern" %>
   </p>
 <% end %>
+
+<h1>kommentieren:</h1>
+<!--%= form_for([@note, @note.comments.build]) do |f| %-->
+<%= form_for :comment, url: comments_path do |f| %>
+  <!--p>
+    <%= f.label :commenter_id %>
+  </p-->
+  <p>
+    <%= f.text_area :comment %>
+  </p>
+  <p>
+    <%= f.submit "speichern" %>
+  </p>
+<% end %>
+
+<%= button_to "Zurück", notes_path, :class => "inbox-sf-add-btn tip", :method => :get %>
  
