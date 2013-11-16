@@ -41,6 +41,10 @@ class NotesController < ApplicationController
 		redirect_to notes_path
 	end
 
+	def search
+	  @notes = Note.search params[:search]
+	end
+
 	private
 		def note_params
 			params.require(:note).permit(:message)
