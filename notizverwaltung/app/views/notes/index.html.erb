@@ -6,9 +6,6 @@
     	<th>id</th>
     	<th>Notiz</th>
   	</tr>
-	<% @notes.to_a.each do |note| %>
- 		<%= render partial: "note", locals: {note: note} %>
- 	<% end %>
-		
+  	<%= render partial: "note", collection: @notes %>		
 </table>
 <%= button_to "Neue Notiz", new_note_path, :class => "inbox-sf-add-btn tip", :method => :get %>

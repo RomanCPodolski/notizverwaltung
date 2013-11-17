@@ -15,7 +15,24 @@
 	    <p class="muted credit"> 
 	    	<div style="float: left; width: auto; margin-right: 20px;">
 	    		<!--%= link_to "Json Export", '/notes.json', :action => 'download', :class => "inbox-sf-add-btn tip", :method => :get %-->
-				<%= button_to "Export", :controller => 'notes', :action => 'export_json',   :method => :post %></div>
+				<%= button_to "Export", :controller => 'notes', :action => 'export_json',   :method => :post %>
+
+
+
+
+				<%= form_tag({:action => 'import_json'}, :multipart => true) do %> <!-- , :controller=>"notes"-->
+					<p>
+						<label for="upload_file">Select File</label>
+						<%= file_field 'upload', 'datafile' %>
+					</p>
+					<%= submit_tag "Upload" %>
+				<% end %>
+
+
+
+
+
+			</div>
 			<%= render :partial => 'notes/search' %>
   		</p>
   	  </div>
