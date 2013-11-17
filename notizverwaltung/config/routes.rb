@@ -12,15 +12,16 @@ Notizverwaltung::Application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-resources :notes, :users, :comments
+  resources :notes, :users, :comments
 
-get 'notes/:id' => 'notes#show'
-get 'notes/:id/edit' => 'notes#edit'
-post 'notes/search' => 'notes#search'
-post 'notes/export_json' => 'notes#export_json'
+  get 'notes/:id' => 'notes#show'
+  get 'notes/:id/edit' => 'notes#edit'
+  post 'notes/search' => 'notes#search'
+  post 'notes/export_json' => 'notes#export_json'
+  post 'notes/import_json' => 'notes#import_json'
 
-  # You can have the root of your site routed with "root"
-root 'notes#index'
+    # You can have the root of your site routed with "root"
+  root 'notes#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view

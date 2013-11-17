@@ -6,14 +6,9 @@
     	<th>id</th>
     	<th>Notiz</th>
   	</tr>
- 	<% @notes.to_a.each do |note| %>
- 	<tr>
-		<td><%= note.id %></td>
-		<td><%= note.message %></td>
-
-		<td><%= button_to "löschen", note_path(note), :id => "", :class => "inbox-sf-add-btn tip", method: :delete, data: { confirm: 'wirklich löschen?' } %></td>
-		<td><%= button_to "bearbeiten", edit_note_path(note), :id => "", :class => "inbox-sf-add-btn tip", method: :get %></td>
-	</tr>
-	<% end %>
+	<% @notes.to_a.each do |note| %>
+ 		<%= render partial: "note", locals: {note: note} %>
+ 	<% end %>
+		
 </table>
 <%= button_to "Neue Notiz", new_note_path, :class => "inbox-sf-add-btn tip", :method => :get %>

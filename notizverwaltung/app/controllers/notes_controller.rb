@@ -54,6 +54,9 @@ class NotesController < ApplicationController
 	end
 
 	def import_json
+		render message: params[:data].inspect
+		note = Note.save(params[:upload])
+    	#render :text => "File has been uploaded successfully"
 	end
 
 	private

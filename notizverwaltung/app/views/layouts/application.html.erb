@@ -3,7 +3,7 @@
 <head>
   <title>Notizverwaltung</title>
 </head>
-<body>
+<body style="height: 99%;">
  	<div id="wrap">
       	<div class="container">
 			<%= yield %>
@@ -13,17 +13,16 @@
 	<div id="footer">
 	  <div class="container">
 	    <p class="muted credit"> 
-	    	<div style="float: left; width: auto;">
+	    	<div style="float: left; width: auto; margin-right: 20px;">
 	    		<!--%= link_to "Json Export", '/notes.json', :action => 'download', :class => "inbox-sf-add-btn tip", :method => :get %-->
-				<%= button_to "Export", :controller => 'notes', :action => 'export_json',   :method => :post %>
-			</div>
+				<%= button_to "Export", :controller => 'notes', :action => 'export_json',   :method => :post %></div>
 			<%= render :partial => 'notes/search' %>
   		</p>
   	  </div>
 	</div>
 
-<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-<%= csrf_meta_tags %>
+	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	<%= csrf_meta_tags %>
 </body>
 </html>
