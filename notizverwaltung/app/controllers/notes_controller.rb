@@ -48,15 +48,22 @@ class NotesController < ApplicationController
 	def export_json
 		@notes = Note.all
 		@notelist = @notes.map do |note|
-		 	{:id => note.id, :text => note.message}
+		 	{:id => note.id, :message => note.message}
 		end
-    	send_data(@notelist.to_json, :filename => "export.json")
+    	send_data(@notelist.to_json, :filename => "Notizen.json")
 	end
 
 	def import_json
-		render message: params[:data].inspect
-		note = Note.save(params[:upload])
-    	#render :text => "File has been uploaded successfully"
+	  	uploaded_io = params[:filedata].tempfile
+		File.open(uploaded_io, 'r') do |file|
+			#render :text => uploaded_io.original_filename
+		   	#file.write(uploaded_io.read)
+			file.each do |line|
+		    	attributes = JSON.parse line
+			    Note.create! attributes
+			end
+		end
+    	redirect_to notes_path
 	end
 
 	private

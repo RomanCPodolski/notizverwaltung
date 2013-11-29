@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   def create
-    @note = Post.find(params[:note_id])
-    @comment = @note.comments.create(params[:comment].permit(:commenter, :comment))
+    @note = Note.find(params[:note_id])
+    @comment = @note.comments.create(params[:comment].permit(:commenter, :body))
     redirect_to note_path(@note)
   end
 end

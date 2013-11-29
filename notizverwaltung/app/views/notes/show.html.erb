@@ -10,3 +10,19 @@
   	<strong>User:</strong>
   	<%= @note.user %>
 </p>
+
+
+
+
+<h1>Kommentare</h1>
+<%= form_for([@note, @note.comments.build]) do |f| %>
+  <%= @comment.comment %>
+  <!--p>
+    <%= f.text_area :comment %>
+  </p-->
+  <p>
+    <%= f.submit "speichern" %>
+  </p>
+<% end %>
+
+<%= button_to "Zurück", notes_path, :class => "inbox-sf-add-btn tip", :method => :get %>
