@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20131116115612) do
 
   create_table "comments", force: true do |t|
     t.text     "commenter_id"
-    t.text     "comment"
+    t.text     "body"
     t.integer  "note_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -58,12 +58,9 @@ ActiveRecord::Schema.define(version: 20131116115612) do
 
   create_table "notes", force: true do |t|
     t.text     "message"
-    t.integer  "users_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "notes", ["users_id"], name: "index_notes_on_users_id"
 
   create_table "users", force: true do |t|
     t.string   "prename"
