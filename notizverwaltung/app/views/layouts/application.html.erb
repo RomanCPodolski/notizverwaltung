@@ -4,6 +4,18 @@
   <title>Notizverwaltung</title>
 </head>
 <body style="height: 99%;">
+
+<nav class="navbar navbar-inverse" role="navigation">
+	<div id="navigation">
+		<p class="navbar-text navbar-right">
+			<%= button_to t('sign_in_facebook'), "/auth/facebook"%>
+		</p>
+		<p class="navbar-text navbar-right">
+			<%= button_to t('sign_in_twitter'), "/auth/twitter"%>
+		</p>
+	</div>
+</nav>
+
  	<div id="wrap">
       	<div class="container">
 			<%= yield %>

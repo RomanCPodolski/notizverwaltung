@@ -4,4 +4,9 @@ class CommentsController < ApplicationController
     @comment = @note.comments.create(params[:comment].permit(:commenter, :body))
     redirect_to note_path(@note)
   end
+
+  def index
+  end
+
+  
 end

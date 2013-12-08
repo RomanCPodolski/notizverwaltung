@@ -20,7 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  sign_in: "Sign in"
+  sign_in_facebook: "Sign in with Facebook"
+  sign_in_twitter: "Sign in with Twitter"
   register: "Register"
   valid_email: "Please enter a valid email address"
   remember-me: "Remember me"

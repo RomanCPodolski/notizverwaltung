@@ -30,6 +30,10 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+# Omniauth für Userverwaltung mit Facebook, twitter etc.
+gem 'omniauth'
+gem 'omniauth-facebook', '1.4.0'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
