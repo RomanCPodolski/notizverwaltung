@@ -20,9 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  sign_in_facebook: "Sign in with Facebook"
-  sign_in_twitter: "Sign in with Twitter"
-  register: "Register"
-  valid_email: "Please enter a valid email address"
-  remember-me: "Remember me"
-  form-signin-heading: "Please Sign in"
+  sign_in:
+  	facebook: "Sign in with Facebook"
+  	twitter: "Sign in with Twitter"
+  	github: "Sign in with Github"

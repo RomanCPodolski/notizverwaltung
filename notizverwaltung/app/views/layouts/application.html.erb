@@ -6,12 +6,10 @@
 <body style="height: 99%;">
 
 <nav class="navbar navbar-inverse" role="navigation">
+	<% if @user?%>
 	<div id="navigation">
 		<p class="navbar-text navbar-right">
-			<%= button_to t('sign_in_facebook'), "/auth/facebook"%>
-		</p>
-		<p class="navbar-text navbar-right">
-			<%= button_to t('sign_in_twitter'), "/auth/twitter"%>
+			<%= button_to t('sign_in_facebook'), user_omniauth_authorize_path(:facebook) %>
 		</p>
 	</div>
 </nav>
@@ -29,7 +27,7 @@
 
 	    		<!-- EXPORT -->
 	    		<!--%= link_to "Json Export", '/notes.json', :action => 'download', :class => "inbox-sf-add-btn tip", :method => :get %-->
-				<%= button_to "Export", :controller => 'notes', :action => 'export_json', :method => :post %>
+				<%= button_to "Export", :controller =>'notes', :action => 'export_json', :method => :post %>
 
 				<!-- IMPORT -->
 				<%= form_tag({action: :import_json}, multipart: true) do %>

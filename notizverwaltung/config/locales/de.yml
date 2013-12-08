@@ -19,12 +19,10 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-ger:
-  sign_in_facebook: "Mit Facebook anmelden"
-  sign_in_twitter: "Mit Twitter anmelden"
-  register: "Registrieren"
-  valid_email: "Bitte geben sie eine gültige Email adresse ein"
-  remember-me: "Login speichern"
-  form-signin-heading: "Bitte melde dich an"
+de:
+	sign_in:
+  		facebook: "Mit Facebook anmelden"
+  		twitter: "Mit Twitter anmelden"
+  		github: "Mit Twitter anmelden"
 
 

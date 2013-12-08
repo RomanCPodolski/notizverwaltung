@@ -1,14 +1,8 @@
 Notizverwaltung::Application.routes.draw do
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   get "notes/index"
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  get "user/login"
-  get "user/register"
-  get "user/logout"
-  get "user/delete"
-  get "user/update"
-  # get "login/register"
-  # get "login/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
