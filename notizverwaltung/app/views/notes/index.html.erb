@@ -1,6 +1,5 @@
 <table class="table table-striped table-responsive">
 	<tr>
-    	<th>id</th>
     	<th>Notiz</th>
     	<th>Erstellt von</th>
     	<th></th>
@@ -8,21 +7,20 @@
   	</tr>
   	<%= render partial: "note", collection: @notes %>		
 </table>
-<%= button_to "Neue Notiz", new_note_path, :class => "inbox-sf-add-btn tip", :method => :get %>
+<%= button_to "Neue Notiz", new_note_path, :class => "btn btn-default btn-sm", :method => :get %>
 
 	<div id="export">
-	  <div class="container">
 	    <p class="muted credit"> 
 	    	<div>
 
 	    		<!-- EXPORT -->
 	    		<!--%= link_to "Json Export", '/notes.json', :action => 'download', :class => "inbox-sf-add-btn tip", :method => :get %-->
-				<%= button_to "Export", :controller =>'notes', :action => 'export_json', :method => :post %>
+				<%= button_to "Export",:class => "btn btn-default btn-sm",  :controller =>'notes', :action => 'export_json', :method => :post %>
 
 				<!-- IMPORT -->
 				<%= form_tag({action: :import_json}, multipart: true) do %>
 				  <%= file_field_tag 'filedata' %>
-				  <%= submit_tag "Import" %>
+				  <%= submit_tag "Import", :class => "btn btn-default btn-sm"%>
 				<% end %>
 			</div>
 
@@ -30,4 +28,3 @@
 			<%= render :partial => 'notes/search' %>
   		</p>
   	  </div>
-	</div>

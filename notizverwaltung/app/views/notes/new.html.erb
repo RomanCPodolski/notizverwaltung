@@ -1,11 +1,16 @@
 <h1>Neue Notiz anlegen</h1>
 
 <%= form_for :note, url: notes_path do |f| %>
-	<p>
-   		<%= f.text_area :message %>
-	</p>
-   	<p>
+	<div class="form-group">
+		<%= f.text_field :heading, class: "form-control"%>
+   		<%= f.text_area :message, class: "form-control", rows:"15" %>
+	</div>
+   	<div class="form-group">
     	<%= f.submit "Speichern"%>
     	<%= button_to "Zurück", notes_path, :class => "inbox-sf-add-btn tip", :method => :get %>
-  	</p>
+  	</div>
+
+<!--%= f.collection_select(:note, :category_id, Author.all, :id, :name_with_initial, prompt: true) %-->
+
+
 <% end %>

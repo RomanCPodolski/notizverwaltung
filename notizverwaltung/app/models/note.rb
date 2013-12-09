@@ -1,6 +1,7 @@
 class Note < ActiveRecord::Base
 
 	validates :message, presence: true, length: {minimum: 5}
+	validates :heading, presence: true
 	belongs_to :user
 	has_many :comments
 
