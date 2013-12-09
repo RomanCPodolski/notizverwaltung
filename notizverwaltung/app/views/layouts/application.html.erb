@@ -8,7 +8,7 @@
 <nav class="navbar" role="navigation">
 
 	<% if user_signed_in? %>
-		<p>Eingeloggt als <%= link_to current_user.email, user_path(current_user) %>, - <%= link_to "Abmelden", "sign_out"%> </p>
+		<p>Eingeloggt als <%= link_to current_user.email, user_path(current_user) %>, - <%= link_to "Abmelden", "/sign_out"%> </p>
 	<% else %>
 		<%= button_to "Mit Facebook anmelden", user_omniauth_authorize_path(:facebook) %>
 
@@ -20,28 +20,6 @@
       	<div class="container">
 			<%= yield %>
 		</div>
-	</div>
-
-	<div id="footer">
-	  <div class="container">
-	    <p class="muted credit"> 
-	    	<div style="float: left; width: auto; margin-right: 20px;">
-
-	    		<!-- EXPORT -->
-	    		<!--%= link_to "Json Export", '/notes.json', :action => 'download', :class => "inbox-sf-add-btn tip", :method => :get %-->
-				<%= button_to "Export", :controller =>'notes', :action => 'export_json', :method => :post %>
-
-				<!-- IMPORT -->
-				<%= form_tag({action: :import_json}, multipart: true) do %>
-				  <%= file_field_tag 'filedata' %>
-				  <%= submit_tag "Import" %>
-				<% end %>
-			</div>
-
-			<!-- SEARCH -->
-			<%= render :partial => 'notes/search' %>
-  		</p>
-  	  </div>
 	</div>
 
 	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>

@@ -13,7 +13,7 @@ Notizverwaltung::Application.routes.draw do
     resources :comments
   end
 
-  resources :users#, :comments
+  resources :user#, :comments
 
   #get 'user/:id' => 'user#show'
   #get 'user/:id/update' => 'user#update'

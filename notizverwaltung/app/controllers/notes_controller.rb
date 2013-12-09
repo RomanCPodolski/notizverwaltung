@@ -10,7 +10,7 @@ class NotesController < ApplicationController
 	def create
 		#render message: params[:note].inspect
 		@note = Note.new(note_params)
-		if  user_signed_in?
+		if user_signed_in?
 			@note.user_id = current_user.id
 		end
 		@note.save
