@@ -1,5 +1,8 @@
 Notizverwaltung::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_scope :user do
+   get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_private_session
+  end
   get "notes/index"
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -10,7 +13,11 @@ Notizverwaltung::Application.routes.draw do
     resources :comments
   end
 
-  #resources :users, :comments
+  resources :users#, :comments
+
+  #get 'user/:id' => 'user#show'
+  #get 'user/:id/update' => 'user#update'
+  #get 'user/:id/destroy' => 'user#destroy'
 
   get 'notes/:id' => 'notes#show'
   get 'notes/:id/edit' => 'notes#edit'

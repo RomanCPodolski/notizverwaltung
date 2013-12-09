@@ -1,6 +1,12 @@
 <tr>
 	<td><%= note.id %></td>
 	<td><%= note.message %></td>
+	<td><small>erstellt von 
+	<%= if note.hasOwner?
+	 	link_to note.user.email, user_path(note.user)
+	 else
+	 	"Gast"
+	 end %></small></td>
 	<td><%= button_to "löschen", note_path(note), :id => "", :class => "inbox-sf-add-btn tip", method: :delete, data: { confirm: 'wirklich löschen?' } %></td>
 	<td><%= button_to "bearbeiten", edit_note_path(note), :class => "inbox-sf-add-btn tip", method: :get %></td>
 </tr>

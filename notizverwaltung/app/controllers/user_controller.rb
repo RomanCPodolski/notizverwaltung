@@ -1,16 +1,12 @@
-class UsersUserController < ApplicationController
-  def login
-  end
-
-  def register
-  end
-
-  def logout
-  end
-
-  def delete
+class UserController < ApplicationController
+  
+  def show
+  	#@user = Users.find(params[:id])
   end
 
   def update
+  end
+
+  def destroy
   end
 end

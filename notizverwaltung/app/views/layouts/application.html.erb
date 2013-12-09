@@ -5,13 +5,15 @@
 </head>
 <body style="height: 99%;">
 
-<nav class="navbar navbar-inverse" role="navigation">
-	<% if @user?%>
-	<div id="navigation">
-		<p class="navbar-text navbar-right">
-			<%= button_to t('sign_in_facebook'), user_omniauth_authorize_path(:facebook) %>
-		</p>
-	</div>
+<nav class="navbar" role="navigation">
+
+	<% if user_signed_in? %>
+		<p>Eingeloggt als <%= link_to current_user.email, user_path(current_user) %>, - <%= link_to "Abmelden", "sign_out"%> </p>
+	<% else %>
+		<%= button_to "Mit Facebook anmelden", user_omniauth_authorize_path(:facebook) %>
+
+		<!--%= link_to "Sign up", new_user_registration_path %-->
+	<% end %>
 </nav>
 
  	<div id="wrap">

@@ -19,4 +19,10 @@ class Note < ActiveRecord::Base
 			n.save
 		end
 	end
+
+	def hasOwner? #Check ob dieses Note jemandem gehört
+		unless self.user_id.nil? || self.user_id == 0
+			User.find(self.user_id)
+		end
+	end
 end
