@@ -1,28 +1,14 @@
 <p>
-	<strong>Id:</strong>
-  	<%= @note.id %>
+  	<h2><%= @note.heading %></h2>
 </p>
 <p>
-  	<strong>Text:</strong>
   	<%= @note.message %>
 </p>
 <p>
-  	<strong>User:</strong>
-  	<%= @note.user %>
+  	<%= link_to @note.user.name, user_path(@note.user) %>
 </p>
 
+<h3>Kommentare</h3>
 
 
-
-<h1>Kommentare</h1>
-<%= form_for([@note, @note.comments.build]) do |f| %>
-  <%= @comment.comment %>
-  <!--p>
-    <%= f.text_area :comment %>
-  </p-->
-  <p>
-    <%= f.submit "speichern" %>
-  </p>
-<% end %>
-
-<%= button_to "Zurück", notes_path, :class => "inbox-sf-add-btn tip", :method => :get %>
+<%= button_to "Zurück", notes_path, :class => "btn btn-default", :method => :get %>

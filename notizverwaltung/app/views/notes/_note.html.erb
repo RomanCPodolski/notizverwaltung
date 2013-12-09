@@ -2,7 +2,7 @@
 	<td><%= link_to note.heading, note_path(note) %></td>
 	<td>
 	<%= if note.hasOwner?
-	 	link_to note.user.email, user_path(note.user), class: "btn btn-default btn-sm"
+	 	link_to note.user.name, user_path(note.user)
 	 else 
 	 	"Gast"
 	  end %></td>

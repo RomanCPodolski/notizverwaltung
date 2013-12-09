@@ -4,9 +4,7 @@
 	<div class="form-group">
 		<%= f.text_field :heading, class: "form-control"%>
    		<%= f.text_area :message, class: "form-control", rows:"15" %>
-	</div>
-   	<div class="form-group">
-    	<%= f.submit "Speichern"%>
+    	<%= f.submit "Speichern" %>
     	<%= button_to "Zurück", notes_path, :class => "inbox-sf-add-btn tip", :method => :get %>
   	</div>
 
