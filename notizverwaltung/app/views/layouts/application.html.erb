@@ -3,20 +3,11 @@
 <head>
   <title>Notizverwaltung</title>
 </head>
-<body style="height: 99%;">
+<body>
 
-<nav class="navbar" role="navigation">
+<%= render "/layouts/navbar" %>
 
-	<% if user_signed_in? %>
-		<p>Eingeloggt als <%= link_to current_user.email, user_path(current_user) %>, - <%= link_to "Abmelden", "/sign_out"%> </p>
-	<% else %>
-		<%= button_to "Mit Facebook anmelden", user_omniauth_authorize_path(:facebook) %>
-
-		<!--%= link_to "Sign up", new_user_registration_path %-->
-	<% end %>
-</nav>
-
- 	<div id="wrap">
+ 	<div class="jumbotron" id="wrap">
       	<div class="container">
 			<%= yield %>
 		</div>

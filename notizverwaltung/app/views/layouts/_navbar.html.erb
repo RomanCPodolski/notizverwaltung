@@ -1,0 +1,25 @@
+<div class="navbar navbar-default navbar-fixed-top">
+
+<div class="container">
+        <div class="navbar-header">
+          <p class="navbar-brand">Notizverwaltung</p>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+
+          <ul class="nav navbar-nav navbar-right">
+
+          	<% if user_signed_in? %>
+				<li>Eingeloggt als <%= link_to current_user.email, user_path(current_user) %></li>
+				<li><%= link_to "Abmelden", "/sign_out" %></li>
+				<% else %>
+				<li><%= link_to "Mit Facebook anmelden", user_omniauth_authorize_path(:facebook) %></li>
+			<% end %>
+          </ul>
+
+
+	</div>
+</div>
