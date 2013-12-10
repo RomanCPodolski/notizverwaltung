@@ -9,7 +9,14 @@
 <%= render "/layouts/navbar" %>
 
  <div class="container">
+ <% flash.each do |name, msg| %>
+ <%= content_tag :div, msg, :id => "flash_#{name}" %>
+ <% end %>
+
  	<div id="wrap">
+ 	<!--% if show_title? %-->
+ 		<h1><%=h yield(:title)%></h1>
+ 	<!--% end %-->
 			<%= yield %>
 		</div>
 	</div>
