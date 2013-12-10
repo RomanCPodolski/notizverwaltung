@@ -9,23 +9,35 @@ else
 <%= render partial: "user", object: @user %>
 
 <% if !@user.notes.blank? %>
-	<table>	
+	<div class="panel-group" id="accordion">
 	  <% for note in @user.notes %>
-	    <tr>
-			<td><%= link_to note.heading, note_path(note) %></td>
-				<% if current_user == note.user %>
-				<td><%= button_to "löschen", note_path(note),:class => "btn btn-default btn-sm", method: :delete, data: { confirm: 'wirklich löschen?' } %></td>
-				<td><%= button_to "bearbeiten", edit_note_path(note),:class => "btn btn-default btn-sm", method: :get %></td>
-			<% else %>
-				<td>Du kannst nur deine eigenen Notes Bearbeiten oder löschen</td>
-			<% end %>
-</tr>
-	  <% end %>
-  </table>
+	    <div class="panel-group" id="accordion">
+  		  <div class="panel panel-default">
+    		<div class="panel-heading">
+      		  <h4 class="panel-title">
+				<%= link_to note.heading, "#collapse#{note.id}", :data => {:toggle => "collapse", :parent => "#accordion" } %>
+			   </h4>
+			  </div>
+			 <div id= <%="collapse#{note.id}" %> class="panel-collapse collapse in">
+      		   <div class="panel-body">
+        		 <%=note.message%>
+        	     <% if current_user == note.user %>
+				   <%= button_to "löschen", note_path(note),:class => "btn btn-default btn-sm", method: :delete, data: { confirm: 'wirklich löschen?' } %>
+					<%= button_to "bearbeiten", edit_note_path(note),:class => "btn btn-default btn-sm", method: :get %>
+					  <% else %>
+					    Du kannst nur deine eigenen Notes Bearbeiten oder löschen
+					   <% end %>
+      				 </div>
+    		       </div>
+			    </div>
+			</div>
+	<% end %>
+</div>
 <% else %>
   Bisher keine Notes verfasst  
   <%= if current_user == @user
    link_to "Jetzt eine Anlegen?", new_note_path
    end %>
 <% end %>
+
 

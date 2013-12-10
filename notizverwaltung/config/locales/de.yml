@@ -1,2 +1,4 @@
 de:
  hello: "Hallo"
+
+ placeholder_due_at: "Zu erledigen bis"

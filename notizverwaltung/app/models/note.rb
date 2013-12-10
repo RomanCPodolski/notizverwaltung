@@ -7,7 +7,7 @@ class Note < ActiveRecord::Base
 
 	def self.search(search)
 	  search_condition = "%" + search + "%"
-	  find(:all, :conditions => ['message LIKE ? OR id LIKE ?', search_condition, search_condition])
+	  find(:all, :conditions => ['message LIKE ? OR heading LIKE ?', search_condition, search_condition])
 	end
 
 	def self.save(upload)
