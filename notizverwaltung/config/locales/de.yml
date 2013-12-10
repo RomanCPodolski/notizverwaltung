@@ -1,4 +1,9 @@
 de:
  hello: "Hallo"
-
+ submit: "Speichern"
  placeholder_due_at: "Zu erledigen bis"
+ placeholder_note_heading: "Überschrift"
+ placeholder_note_message: "Beschreibung"
+ navbar_heading: "Notiz"
+ sign_out_link: "Abmelden"
+ sign_in_facebook: "Mit facebook Anmelden"

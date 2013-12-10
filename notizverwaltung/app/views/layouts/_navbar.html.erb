@@ -2,7 +2,7 @@
 
 <div class="container">
         <div class="navbar-header">
-          <a href="/"class="navbar-brand">Notizverwaltung</a>
+          <a href="/"class="navbar-brand"><%=t('navbar_heading')%></a>
           <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -14,9 +14,9 @@
 
           	<% if user_signed_in? %>
 				      <li><%= link_to current_user.name, user_path(current_user) %></li>
-				      <li><%= link_to "Abmelden", "/sign_out" %></li>
+				      <li><%= link_to t('sign_out_link'), "/sign_out" %></li>
 				    <% else %>
-				      <li><%= link_to "Mit Facebook anmelden", user_omniauth_authorize_path(:facebook) %></li>
+				      <li><%= link_to t('sign_in_facebook'), user_omniauth_authorize_path(:facebook) %></li>
 			       <% end %>
           </ul>
 
