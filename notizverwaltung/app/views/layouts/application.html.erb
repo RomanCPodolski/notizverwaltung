@@ -4,14 +4,17 @@
   <title><%=h(yield(:title) || "Untitled" ) %></title>
   <%=yield(:head)%>
 </head>
-<body style>
+<body>
+<a href="https://github.com/JavaTheHood/notizverwaltung"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png" alt="Fork me on GitHub"></a>
+<%= render "/layouts/navbar" %> 	
 
-<%= render "/layouts/navbar" %>
-
- <div class="container">
- <% flash.each do |name, msg| %>
- <%= content_tag :div, msg, :id => "flash_#{name}" %>
- <% end %>
+	 <div class="container">
+	 <% flash.each do |name, msg| %>
+	 	<div class="alert alert-info alert-dismissable">
+	 		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	 		<%= content_tag :div, msg, :id => "flash_#{name}" %>
+	 	</div> 
+	 <% end %>
 
  	<div id="wrap">
  	<!--% if show_title? %-->
@@ -20,6 +23,12 @@
 			<%= yield %>
 		</div>
 	</div>
+
+    <div id="footer">
+      <div class="container">
+        <h1><%= yield(:footer)%></h1>
+      </div>
+    </div>
 
 	<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
 	<%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/redmond/jquery-ui.css", "application" %>

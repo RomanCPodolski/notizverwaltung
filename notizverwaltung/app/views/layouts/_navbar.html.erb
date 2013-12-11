@@ -1,5 +1,5 @@
 <div class="navbar navbar-default">
-
+<a href="https://github.com/JavaTheHood/notizverwaltung"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png" alt="Fork me on GitHub"></a>
 <div class="container">
         <div class="navbar-header">
           <a href="/"class="navbar-brand"><%=t('navbar_heading')%></a>
@@ -13,12 +13,38 @@
           <ul class="nav navbar-nav navbar-right">
 
           	<% if user_signed_in? %>
-				      <li><%= link_to current_user.name, user_path(current_user) %></li>
+				      <li><span class="glyphicon glyphicon-user"><%= link_to current_user.name, user_path(current_user) %></li>
 				      <li><%= link_to t('sign_out_link'), "/sign_out" %></li>
 				    <% else %>
-				      <li><%= link_to t('sign_in_facebook'), user_omniauth_authorize_path(:facebook) %></li>
+
+             <!-- Button trigger modal -->
+              <a class="navbar-link" data-toggle="modal" data-target="#myModal">
+                <span class="glyphicon glyphicon-user"></span><%=t('sign_in_modal')%>
+              </a>
+
+              <!-- Modal -->
+              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                      ...
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <%= button_to t('sign_in_facebook'), user_omniauth_authorize_path(:facebook), class: "btn btn-primary" %>
+                    </div>
+                  </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+              </div><!-- /.modal -->
+
+				      
 			       <% end %>
           </ul>
 
 	</div>
 </div>
+
