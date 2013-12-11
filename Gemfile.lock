@@ -159,6 +159,7 @@ GEM
       oauth2 (~> 0.8.0)
       omniauth (~> 1.0)
     orm_adapter (0.5.0)
+    pg (0.17.0-x86-mingw32)
     polyamorous (0.6.4)
       activerecord (>= 3.0)
     polyglot (0.3.3)
@@ -218,8 +219,6 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
-    sqlite3 (1.3.8)
-    sqlite3 (1.3.8-x86-mingw32)
     therubyracer (0.12.0)
       libv8 (~> 3.16.14.0)
       ref
@@ -259,12 +258,12 @@ DEPENDENCIES
   jquery-rails
   omniauth
   omniauth-facebook (= 1.4.0)
+  pg
   rabl
   rails (= 4.0.0)
   rspec-rails (~> 2.5)
   sass-rails (~> 4.0.0)
   sdoc
-  sqlite3
   therubyracer
   turbolinks
   uglifier (>= 1.3.0)
