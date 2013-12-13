@@ -1,0 +1,13 @@
+<%= form_for :note, url: notes_path do |f| %>
+	<div class="form-group">
+		<%= f.text_field :heading, class: "form-control", :placeholder => t('placeholder_note_heading')%>
+   		<%= f.text_area :message, class: "form-control", rows:"15", :placeholder => t('placeholder_note_message')%>
+   		<%= f.text_field :due_at, :placeholder => t('placeholder_due_at') %>
+    	<%= f.submit t('submit') %>
+    	<%= button_to "Zurück", notes_path, :class => "inbox-sf-add-btn tip", :method => :get %>
+  	</div>
+
+<!--%= f.collection_select(:note, :category_id, Author.all, :id, :name_with_initial, prompt: true) %-->
+
+
+<% end %>

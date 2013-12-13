@@ -1,0 +1,9 @@
+en:
+ hello: "Hello"
+ submit: "Save"
+ placeholder_due_at: "Due until"
+ placeholder_note_heading: "Heading"
+ placeholder_note_message: "Description"
+ navbar_heading: "Note"
+ sign_out_link: "Sign out"
+ sign_in_facebook: "Sign in with Faceook"

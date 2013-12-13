@@ -1,0 +1,42 @@
+
+<% if !@notes.blank? %>
+<table class="table table-striped table-responsive">
+	<tr>
+    	<th>Notiz</th>
+    	<th>Erstellt von</th>
+    	<th></th>
+    	<th></th>
+  	</tr>
+  	<%= render partial: "note", collection: @notes %>		
+</table>
+<%else%>
+		<h1>Noch keine Notizen Vorhanden,
+		<%= if user_signed_in?
+			link_to "Jetzt eine neue Notiz anlegen", new_note_path
+		else
+			link_to "Anmelden und dann eine neue Notiz anlegen", user_omniauth_authorize_path(:facebook)
+		end
+		%></h1>
+<%end %>
+<div>
+<%= button_to "Neue Notiz", new_note_path, :class => "btn btn-default btn-sm", :method => :get %>
+							<!-- SEARCH -->
+<%= render :partial => 'notes/search' %>
+</div>
+	<div id="export">
+	    <p class="muted credit"> 
+	    	<div>
+
+	    		<!-- EXPORT -->
+	    		<!--%= link_to "Json Export", '/notes.json', :action => 'download', :class => "inbox-sf-add-btn tip", :method => :get %-->
+				<%= button_to "Export",:class => "btn btn-default btn-sm",  :controller =>'notes', :action => 'export_json', :method => :post %>
+
+
+				<!-- IMPORT -->
+				<%= form_tag({action: :import_json}, multipart: true, :class=>"form-inline") do %>
+				  <%= file_field_tag 'filedata' %>
+				  <%= submit_tag "Import", :class => "btn btn-default btn-sm"%>
+				<% end %>
+	</div>
+  </p>
+</div>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  commenter: 
+  comment: MyText
+  note_id: 
+
+two:
+  commenter: 
+  comment: MyText
+  note_id: 
