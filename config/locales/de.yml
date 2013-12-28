@@ -6,4 +6,6 @@ de:
  placeholder_note_message: "Beschreibung"
  navbar_heading: "Notiz"
  sign_out_link: "Abmelden"
- sign_in_facebook: "Mit facebook Anmelden"
+ sign_in_facebook: "Mit facebook anmelden"
+ sign_in_github: "Mit github anmelden"
+ sign_note_to: "Notiz zuweisen an:"

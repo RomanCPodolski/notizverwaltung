@@ -4,16 +4,15 @@ Notizverwaltung::Application.routes.draw do
    get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_private_session
   end
   get "notes/index"
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   resources :notes do
-    resources :comments
+    
   end
 
-  resources :user#, :comments
+  resources :user, :comments
 
   #get 'user/:id' => 'user#show'
   #get 'user/:id/update' => 'user#update'

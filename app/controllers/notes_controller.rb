@@ -10,13 +10,14 @@ class NotesController < ApplicationController
 	def create
 		#render message: params[:note].inspect
 		@note = Note.new(note_params)
+		
 		if user_signed_in?
-			@note.user_id = current_user.id
+			@note.author_id = current_user.id
 		end
+
 		@note.save
 		redirect_to notes_path
-		#redirect_to @note
-		#redirect_to action: :show, id:@note.id
+
 	end
 
 	def show

@@ -2,7 +2,10 @@ class Note < ActiveRecord::Base
 
 	validates :message, presence: true, length: {minimum: 5}
 	validates :heading, presence: true
-	belongs_to :user
+
+	belongs_to :author, :class_name => "User"
+	belongs_to :signed_to, :class_name => "User"
+	
 	has_many :comments
 
 	def self.search(search)
@@ -22,8 +25,8 @@ class Note < ActiveRecord::Base
 	end
 
 	def hasOwner? #Check ob dieses Note jemandem gehört
-		unless self.user_id.nil? || self.user_id == 0
-			User.find(self.user_id)
+		unless self.author_id.nil? || self.author_id == 0
+			User.find(self.author_id)
 		end
 	end
 end
