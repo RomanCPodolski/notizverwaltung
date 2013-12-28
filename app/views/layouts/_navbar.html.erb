@@ -32,22 +32,22 @@
                     </div>
                     <div class="modal-body">
                       
-      <form class="form-signin" role="form">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <input type="text" class="form-control" placeholder="Email address" required autofocus>
-        <input type="password" class="form-control" placeholder="Password" required>
-        <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      </form>
+                    <form class="form-signin" role="form">
+                      <h2 class="form-signin-heading">Please sign in</h2>
+                      <input type="text" class="form-control" placeholder="Email address" required autofocus>
+                      <input type="password" class="form-control" placeholder="Password" required>
+                      <label class="checkbox">
+                        <input type="checkbox" value="remember-me"> Remember me
+                      </label>
+                      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                    </form>
 
 
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                       
-                      <%= button_to "Register", "/", class: "btn btn-primary" %>
+                      <%= button_to 'Register', new_user_registration_path, class: "btn btn-primary" %>
                       <%= button_to t('sign_in_facebook'), user_omniauth_authorize_path(:facebook), class: "btn btn-primary" %>
                       <%= button_to t('sign_in_github'), user_omniauth_authorize_path(:github), class: "btn btn-primary" %>
 

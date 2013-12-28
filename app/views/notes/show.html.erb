@@ -9,6 +9,23 @@
 </p>
 
 <h3>Kommentare</h3>
+	
+	<% for comment in @note.comments %>
+		<p>
+			<%= comment.body %>
+		</p>
+
+	<% end %>
+
+<p>
+  	<!--%= button_to "Neuen Kommentar Anlegen", new_comment_path, :class => "btn btn-default" %-->
+  	<%= form_for :comment, url: note_path(@note) do |f| %>
+		<div class="form-group">
+			<%= f.text_area :body, class: "form-control", :placeholder => t('placeholder_note_heading')%>
+	    	<%= f.submit t('submit') %>
+	  	</div>
+  	<% end %>
+</p>
 
 
 <%= button_to "Zurück", notes_path, :class => "btn btn-default", :method => :get %>
