@@ -7,3 +7,5 @@ en:
  navbar_heading: "Note"
  sign_out_link: "Sign out"
  sign_in_facebook: "Sign in with Faceook"
+ sign_in_github: "Sign in with Github"
+ sign_note_to: "Sign note to:"

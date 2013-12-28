@@ -33,6 +33,7 @@ gem 'jbuilder', '~> 1.2'
 # Omniauth für Userverwaltung mit Facebook, twitter etc.
 gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'
+gem 'omniauth-github'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -46,7 +47,10 @@ gem 'bootstrap-sass'
 # gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
 # Use ActiveAdmin for User Administration
-gem 'activeadmin', github: 'gregbell/active_admin'
+# gem 'activeadmin', github: 'gregbell/active_admin'
+
+# Use ActiveAdmin for User Administration
+gem 'devise'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'

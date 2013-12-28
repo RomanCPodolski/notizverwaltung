@@ -36,6 +36,9 @@
                     <div class="modal-footer">
                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                       <%= button_to t('sign_in_facebook'), user_omniauth_authorize_path(:facebook), class: "btn btn-primary" %>
+                      <%= button_to t('sign_in_github'), user_omniauth_authorize_path(:github), class: "btn btn-primary" %>
+
+
                     </div>
                   </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->

@@ -5,7 +5,7 @@
   	<%= @note.message %>
 </p>
 <p>
-  	<%= link_to @note.user.name, user_path(@note.user) %>
+  	<%= link_to @note.author.name, user_path(@note.author) %>
 </p>
 
 <h3>Kommentare</h3>
