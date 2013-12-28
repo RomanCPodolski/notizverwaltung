@@ -1,9 +1,0 @@
-<tr>
-	<td><%= link_to usernote.heading, note_path(usernote) %></td>
-	<% if current_user == usernote.user %>
-		<td><%= button_to "löschen", note_path(usernote),:class => "btn btn-default btn-sm", method: :delete, data: { confirm: 'wirklich löschen?' } %></td>
-		<td><%= button_to "bearbeiten", edit_note_path(usernote),:class => "btn btn-default btn-sm", method: :get %></td>
-		<% else %>
-			<td>Du kannst nur deine eigenen Notes Bearbeiten oder löschen</td>
-		<% end %>
-</tr>

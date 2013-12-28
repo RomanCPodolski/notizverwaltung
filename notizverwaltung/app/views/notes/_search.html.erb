@@ -1,6 +1,0 @@
-<%= form_tag :controller => 'notes', :action => 'search', :method => 'get', :class=>"form-inline" do %>
-	<%= text_field_tag :search, params[:search], :id => 'search_field' %>
-	<%= submit_tag "suchen", :name => nil %> 
-	<%= link_to_function "zurücksetzen", "$('search_field').clear()" %>
-	<!--%= button_to "zurücksetzen", "$('search_field').clear()", :class => "inbox-sf-add-btn tip" %-->
-<% end %> 
