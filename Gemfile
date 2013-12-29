@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+# source 'https://rubygems.org'
 
 # JSON lib
 gem 'rabl'
@@ -6,7 +6,7 @@ gem 'rabl'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
-# Use postgresql as the database for Active Record
+# Use sqlite as the database for Active Record
 gem 'sqlite3'
 
 # Use SCSS for stylesheets
