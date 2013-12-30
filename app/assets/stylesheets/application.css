@@ -12,3 +12,11 @@
  *= require_tree .
  *= require yeti-bootswatch
  */
+
+.export {
+	float: right;
+}
+
+.import {
+	float: left;
+}

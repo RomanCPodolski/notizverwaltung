@@ -17,7 +17,6 @@ class NotesController < ApplicationController
 
 		@note.save
 		redirect_to notes_path
-
 	end
 
 	def show
@@ -64,7 +63,9 @@ class NotesController < ApplicationController
 		   	#file.write(uploaded_io.read)
 			file.each do |line|
 		    	attributes = JSON.parse line
-			    Note.create! attributes
+			    
+				Note.create(:message => attributes)
+			    #Note.create attributes["message"]
 			end
 		end
     	redirect_to notes_path

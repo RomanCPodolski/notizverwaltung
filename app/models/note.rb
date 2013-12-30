@@ -8,6 +8,7 @@ class Note < ActiveRecord::Base
 	
 	has_many :comments
 
+
 	def self.search(search)
 	  search_condition = "%" + search + "%"
 	  find(:all, :conditions => ['message LIKE ? OR heading LIKE ?', search_condition, search_condition])
@@ -28,5 +29,6 @@ class Note < ActiveRecord::Base
 		unless self.author_id.nil? || self.author_id == 0
 			User.find(self.author_id)
 		end
+
 	end
 end

@@ -10,3 +10,4 @@ de:
  sign_in_facebook: "Mit facebook anmelden"
  sign_in_github: "Mit github anmelden"
  sign_note_to: "Notiz zuweisen an:"
+ user_delete_msg: "löschen"

@@ -20,22 +20,22 @@
 <%end %>
 <div>
 <%= button_to "Neue Notiz", new_note_path, :class => "btn btn-default btn-sm", :method => :get %>
-							<!-- SEARCH -->
+
+<!-- SEARCH -->
 <%= render :partial => 'notes/search' %>
+
 </div>
 	<div id="export">
 	    <p class="muted credit"> 
 	    	<div>
-
 	    		<!-- EXPORT -->
-	    		<!--%= link_to "Json Export", '/notes.json', :action => 'download', :class => "inbox-sf-add-btn tip", :method => :get %-->
-				<%= button_to "Export",:class => "btn btn-default btn-sm",  :controller =>'notes', :action => 'export_json', :method => :post %>
+				<%= button_to "Export", {:controller =>'notes', :action => 'export_json', :method => :post}, :class => "btn btn-default btn-sm export" %>
 
 
 				<!-- IMPORT -->
-				<%= form_tag({action: :import_json}, multipart: true, :class=>"form-inline") do %>
-				  <%= file_field_tag 'filedata' %>
-				  <%= submit_tag "Import", :class => "btn btn-default btn-sm"%>
+				<%= form_tag({action: :import_json}, multipart: true, :class=>"form-inline") do %> 
+				  <%= submit_tag "Import", :class => "btn btn-default btn-sm import"%>
+				  <%= file_field_tag 'filedata', :class=>"import"%> 
 				<% end %>
 	</div>
   </p>
