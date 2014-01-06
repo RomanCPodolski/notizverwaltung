@@ -8,12 +8,6 @@ class Note < ActiveRecord::Base
 	
 	has_many :comments
 
-
-	def self.search(search)
-	  search_condition = "%" + search + "%"
-	  find(:all, :conditions => ['message LIKE ? OR heading LIKE ?', search_condition, search_condition])
-	end
-
 	def self.save(upload)
 		json =  upload['datafile'].original_filename
 		datahash = JSON.parse(json)
@@ -25,7 +19,7 @@ class Note < ActiveRecord::Base
 		end
 	end
 
-	def hasOwner? #Check ob dieses Note jemandem gehört
+	def hasOwner? #Check ob diese Note jemandem gehört
 		unless self.author_id.nil? || self.author_id == 0
 			User.find(self.author_id)
 		end

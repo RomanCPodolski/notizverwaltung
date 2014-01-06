@@ -3,8 +3,7 @@
 <%= form_for(@note) do |f| %>
   <% if @note.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@note.errors.count, "error") %> prohibited
-        this note from being saved:</h2>
+      <h2><%= pluralize(@note.errors.count, "error") %> prohibited this note from being saved:</h2>
       <ul>
       <% @note.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -24,10 +23,10 @@
 
 <h1>kommentieren:</h1>
 <%= form_for([@note, @note.comments.build]) do |f| %>
-<!--%= form_for :comment, url: comments_path do |f| %-->
-  <!--p>
-    <%= f.label :commenter_id %>
-  </p-->
+<% # = form_for :comment, url: comments_path do |f| %>
+  <!--p-->
+    <% #= f.label :commenter_id %>
+  <!--/p-->
   <p>
     <%= f.text_area :comment %>
   </p>

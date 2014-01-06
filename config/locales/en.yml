@@ -10,3 +10,5 @@ en:
  sign_in_github: "Sign in with Github"
  sign_note_to: "Sign note to:"
  user_delete_msg: "delete"
+ notes_search_clearinput: "clear"
+ notes_search_search_button: "search"

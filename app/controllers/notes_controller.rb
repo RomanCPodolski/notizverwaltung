@@ -45,7 +45,8 @@ class NotesController < ApplicationController
 	end
 
 	def search
-	  @notes = Note.search params[:search]
+	    #@notes = Note.search params[:search]
+	    @notes = Note.where("message LIKE ? OR heading LIKE ?", "%"+params[:search]+"%", "%"+params[:search]+"%")
 	end
 
 	def export_json
@@ -64,7 +65,7 @@ class NotesController < ApplicationController
 			file.each do |line|
 		    	attributes = JSON.parse line
 			    
-				Note.create(:message => attributes)
+				Note.create(attributes)		# :message => 
 			    #Note.create attributes["message"]
 			end
 		end

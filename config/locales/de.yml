@@ -11,3 +11,5 @@ de:
  sign_in_github: "Mit github anmelden"
  sign_note_to: "Notiz zuweisen an:"
  user_delete_msg: "löschen"
+ notes_search_clearinput: "zurücksetzen"
+ notes_search_search_button: "suchen"

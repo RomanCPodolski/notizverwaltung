@@ -11,12 +11,12 @@
 </table>
 <%else%>
 		<h1>Noch keine Notizen Vorhanden,
-		<%= if user_signed_in?
-			link_to "Jetzt eine neue Notiz anlegen", new_note_path
-		else
-			link_to "Anmelden und dann eine neue Notiz anlegen", user_omniauth_authorize_path(:facebook)
-		end
-		%></h1>
+			<%= if user_signed_in?
+				link_to "Jetzt eine neue Notiz anlegen", new_note_path
+			else
+				link_to "Anmelden und dann eine neue Notiz anlegen", user_omniauth_authorize_path(:facebook)
+			end%>
+		</h1>
 <%end %>
 <div>
 <%= button_to "Neue Notiz", new_note_path, :class => "btn btn-default btn-sm", :method => :get %>
@@ -26,7 +26,7 @@
 
 </div>
 	<div id="export">
-	    <p class="muted credit"> 
+	    <p class="muted credit">
 	    	<div>
 	    		<!-- EXPORT -->
 				<%= button_to "Export", {:controller =>'notes', :action => 'export_json', :method => :post}, :class => "btn btn-default btn-sm export" %>
