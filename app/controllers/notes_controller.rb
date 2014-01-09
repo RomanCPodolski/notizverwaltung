@@ -8,11 +8,6 @@ class NotesController < ApplicationController
 	end
 
 	def create
-		# render message: params[:note].inspect
-
-#		logger.debug note_params
-
-#		@note = Note.new(note_params)
 		
 		@note = Note.new do |u|
 			u.heading = note_params[:heading]
@@ -20,15 +15,10 @@ class NotesController < ApplicationController
 			u.due_at = note_params[:due_at]
 			if user_signed_in?
 				u.author_id = current_user.id
-			#else u.author_id = 1
 			end
 			u.signed_to_id = note_params[:signed_to]
 			u.status_id = note_params[:status]
 		end
- 
-#		if user_signed_in?
-#			@note.author_id = current_user.id
-#		end
 
 		@note.save
 		redirect_to notes_path

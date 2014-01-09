@@ -14,7 +14,11 @@ Notizverwaltung::Application.routes.draw do
   #     end
   # end
 
-  resources :notes, :user, :comments
+  resources :notes do
+    resources :comments, :only => [:create]
+  end
+
+  resources :user
 
   #get 'user/:id' => 'user#show'
   #get 'user/:id/update' => 'user#update'

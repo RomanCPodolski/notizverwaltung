@@ -18,9 +18,14 @@
 
 <p>
   	<!--%= button_to "Neuen Kommentar Anlegen", new_comment_path, :class => "btn btn-default" %-->
-  	<%= form_for :comment, url: note_path(@note) do |f| %>
+  	<%= form_for [@note, Comment.new] do |f| %>
 		<div class="form-group">
-			<%= f.text_area :body, class: "form-control", :placeholder => t('placeholder_note_heading')%>
+			<p>
+				<%= f.text_field :heading, class: "form-control", :placeholder => t('placeholder_note_heading')%>
+			</p>
+			<p>
+				<%= f.text_area :body, class: "form-control", :placeholder => t('placeholder_note_heading')%>
+			</p>
 	    	<%= f.submit t('submit') %>
 	  	</div>
   	<% end %>
