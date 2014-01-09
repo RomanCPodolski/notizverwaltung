@@ -8,7 +8,7 @@ class NotesController < ApplicationController
 	end
 
 	def create
-		#render message: params[:note].inspect
+		render message: params[:note].inspect
 		@note = Note.new(note_params)
 		
 		if user_signed_in?

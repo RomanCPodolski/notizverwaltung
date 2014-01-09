@@ -9,3 +9,10 @@
 # 	users = User.create([{name: 'Roman', 	password: 'SHA(letmeinplz)'},
 #					 {name: 'Dominik',	password: 'SHA(letmeinplz)'},
 #					 {name: 'Janek', 	password: 'SHA(letmeinplz)'}]);
+
+
+Status.create({"name"=>"Neu"})
+Status.create({"name"=>"In Bearbeitung"})
+Status.create({"name"=>"Dringend"})
+Status.create({"name"=>"Unterhose"})
+Status.create({"name"=>"Erledigt"})
