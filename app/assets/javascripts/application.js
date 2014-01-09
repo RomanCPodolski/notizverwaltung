@@ -16,6 +16,6 @@
 //= require_tree .
 //= require bootstrap
 
-$(function () {
-	$("#note_due_at").datepicker();
-});
+//$(function () {
+//	$("#note_due_at").datepicker();
+//});
