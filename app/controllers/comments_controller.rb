@@ -11,17 +11,6 @@ class CommentsController < ApplicationController
     @comment.save
     redirect_to @note
 
-  #	@comment = Comment.new do |c|
-  #    c.heading =  comment_params[:heading]
-  #    c.body =  comment_params[:body]
-  #    if user_signed_in?
-  #      c.user_id = current_user.id
-  #    end
-  #    c.note_id = comment_params[:note_id]
-  #  end
-  #  @comment.save
-  #  @note = Note.find(comment_params[:note_id])
-  #  redirect_to note_path(@note)
   end
 
   def index
