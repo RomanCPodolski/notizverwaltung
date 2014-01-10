@@ -5,6 +5,9 @@
   	<%= @note.message %>
 </p>
 <p>
+	<%= @note.status.name %>
+</p>
+<p>
   	<%= link_to @note.author.name, user_path(@note.author) %>
 </p>
 

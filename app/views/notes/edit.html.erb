@@ -17,7 +17,14 @@
   <p>
     <%= f.text_area :message %>
   </p>
- 
+  <p>
+    <%= f.collection_select :status, Status.all, :id, :name %> 
+  </p>
+  <% if false %>
+  <%= f.date_field :due_at,  class: "form-control", :placeholder => t('placeholder_due_at') %>
+      <!--%= f.label t.('sign_note_to') %-->
+      <%= f.collection_select :signed_to, User.all, :id, :name %>
+  <% end %>
   <p>
     <%= f.submit "speichern" %>
   </p>

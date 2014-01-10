@@ -35,7 +35,7 @@ class NotesController < ApplicationController
 	def update
 	  @note = Note.find(params[:id])
 	 
-	  if @note.update(note_params)
+	  if @note.update(params[:note].permit(:heading, :message, :status_id))
 	    #redirect_to @note
 	    redirect_to notes_path
 	  else
@@ -79,6 +79,6 @@ class NotesController < ApplicationController
 
 	private
 		def note_params
-			params.require(:note).permit(:heading,:message,:due_at,:signed_to,:status)
+			params.require(:note).permit(:id,:heading,:message,:due_at,:signed_to,:status)
 		end
 end
