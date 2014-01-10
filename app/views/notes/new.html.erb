@@ -5,8 +5,12 @@
    		<%= f.date_field :due_at,  class: "form-control", :placeholder => t('placeholder_due_at') %>
    		<!--%= f.label t.('sign_note_to') %-->
    		<%= f.collection_select :signed_to, User.all, :id, :name %>
-   		<%= f.collection_select :status, Status.all, :id, :name %>  
+   		<%= f.collection_select :status, Status.all, :id, :name %> 
+      <%= f.collection_select :category, Category.all, :id, :name %> 
     	<%= f.submit t('submit'), :class => "btn btn-default btn-sm" %>
+      
+
+
     	<%= button_to "Zurück", notes_path, :class => "btn btn-default btn-sm inbox-sf-add-btn tip", :method => :get %>
   	</div>
 

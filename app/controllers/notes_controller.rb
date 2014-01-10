@@ -18,6 +18,7 @@ class NotesController < ApplicationController
 			end
 			u.signed_to_id = note_params[:signed_to]
 			u.status_id = note_params[:status]
+			u.category_id = note_params[:category]
 		end
 
 		@note.save
@@ -79,6 +80,6 @@ class NotesController < ApplicationController
 
 	private
 		def note_params
-			params.require(:note).permit(:id,:heading,:message,:due_at,:signed_to,:status)
+			params.require(:note).permit(:id,:heading,:message,:due_at,:signed_to,:status, :category)
 		end
 end
