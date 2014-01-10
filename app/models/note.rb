@@ -6,6 +6,7 @@ class Note < ActiveRecord::Base
 	belongs_to :author, :class_name => "User"
 	belongs_to :signed_to, :class_name => "User"
 	belongs_to :status
+	belongs_to :category
 	
 	has_many :comments
 
