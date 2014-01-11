@@ -53,8 +53,10 @@ test:
 
 production:
   adapter: postgresql
+  host: ec2-54-204-43-139.compute-1.amazonaws.com
+  port: 5432
   encoding: unicode
-  database: notizverwaltung_production
+  database: d6lemk9ffjjqck
   pool: 5
-  username: notizverwaltung
-  password: notizverwaltung
+  username: tyqkuctjignnxt
+  password: acV7tug168EtiPNr8NGXWDTuKJ
