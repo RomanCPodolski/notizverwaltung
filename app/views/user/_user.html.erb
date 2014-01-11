@@ -1,6 +1,6 @@
 <table>
 
-	<tr><td><!--%if user.is_gravtastic! %-->
+	<tr><td><!--%if user.has_gravatar %-->
 			<%= image_tag user.gravatar_url(:rating => 'R', :secure => true) %>
 			<!--% else %-->
 	<!--img src="http://placehold.it/150x150" class="img-thumbnail"-->
