@@ -19,7 +19,7 @@ else
 			   </h4>
 			  </div>
 			 <div id= <%="collapse#{note.id}" %> class="panel-collapse collapse in">
-      		   <div class="panel-body">
+      		   <div class="panel-body profile_buttons"">
         		 <%=note.message%>
         	     <% if current_user == note.author %>
 				   <%= button_to "löschen", note_path(note), :class => "btn btn-default btn-sm", method: :delete, data: { confirm: 'wirklich löschen?' } %>

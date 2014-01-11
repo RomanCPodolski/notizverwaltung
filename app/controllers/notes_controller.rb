@@ -87,14 +87,28 @@ class NotesController < ApplicationController
 			file.each do |line|
 		    	attributes = JSON.parse line
 
-				Note.create(attributes)
-				# note = Note.new do |n|
+				#Note.create(attributes)
+
+				attributes = ActiveSupport::JSON.decode line
+
+				@note = Note.new(heading: attributes[:heading],
+								 message: attributes[:message],
+				   				 author_id: attributes[:author],
+				   				 due_at: attributes[:due_at])
+
+				#@note = Note.new(heading: attributes[:heading])
+				#@note.message = attributes[:message]
+				#@note.author_id = attributes[:author]
+				#@note.due_at = attributes[:due_at]
+				#@note.save
+
+				#note = Note.new do |n|
 				#   n.heading = attributes[:heading]
 				#   n.message = attributes[:message]
 				#   n.author_id = attributes[:author]
 				#   n.due_at = attributes[:due_at]
-				# end
-				# note.save
+				#end
+				#note.save
 			end
 		end
     	redirect_to notes_path
