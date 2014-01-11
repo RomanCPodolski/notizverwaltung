@@ -13,13 +13,14 @@
           <ul class="nav navbar-nav navbar-right">
 
           	<% if user_signed_in? %>
-				      <li><span class="glyphicon glyphicon-user"><%= link_to current_user.name, user_path(current_user) %></li>
+				      <li><%= image_tag current_user.gravatar_url(:rating => 'R',:size => 50, :secure => true)%>
+              </li><li><%= link_to current_user.name, user_path(current_user) %></li>
 				      <li><%= link_to t('sign_out_link'), "/sign_out" %></li>
 				    <% else %>
 
-             <%= link_to('Login', new_user_session_path)  %>
-
-				      
+             <!--%= link_to('Login', new_user_session_path)  %-->
+              <%= render 'devise/menu/registration_items' %>
+              <%= render 'devise/menu/login_items' %>				      
 			       <% end %>
           </ul>
 

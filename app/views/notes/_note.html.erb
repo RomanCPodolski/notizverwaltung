@@ -1,12 +1,10 @@
 <tr>
 	<td><%= link_to note.heading, note_path(note) %></td>
-	<td>
-	<%= if note.hasOwner?
-	 	link_to note.author.name, user_path(note.author) 
-	 	#link_to image_tag note.author.gravatar_url(:rating => 'R', :secure => true), user_path(note.author)
-	 else 
-	 	"Gast"
-	  end %></td>
+	<% if note.hasOwner? %>
+	 	<td><%=link_to note.author.name, user_path(note.author) %></td>
+	 <% else %> 
+	 	<td>"Gast"</td>
+	 <% end %>
 	<% if user_signed_in? && current_user == note.author %>
 	<td><%= button_to "löschen", note_path(note),:class => "btn btn-default btn-sm", method: :delete, data: { confirm: 'wirklich löschen?' } %></td>
 	<td><%= button_to "bearbeiten", edit_note_path(note),:class => "btn btn-default btn-sm", method: :get %></td>

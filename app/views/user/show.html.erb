@@ -32,7 +32,8 @@ else
 					  Kommentare
 					    <% for c in note.comments %>
 					    
-					      <p><%= c.heading %> von <%= link_to c.user.name, user_path(c.user) %><!--%= image_tag c.user.gravatar_url(:rating => 'R', :secure => true) %--></p>
+					      <p><%= c.heading %> von <%= link_to c.user.name, user_path(c.user) %>
+					      <%= image_tag c.user.gravatar_url(:rating => 'R',:size => 50, :secure => true)%></p>
 					      <p><%= c.body %></p>
 
 					    <% end %>
