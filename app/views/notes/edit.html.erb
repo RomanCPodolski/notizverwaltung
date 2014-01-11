@@ -26,8 +26,8 @@
       <%= f.collection_select :signed_to, User.all, :id, :name %>
   <% end %>
   <p>
-    <%= f.submit "speichern" %>
+    <%= f.submit "speichern", :class => "btn btn-default btn-sm" %>
   </p>
 <% end %>
 
-<%= button_to "Zurück", notes_path, :class => "inbox-sf-add-btn tip", :method => :get %>
+<%= button_to "Zurück", notes_path, :class => "inbox-sf-add-btn tip btn btn-default btn-sm", :method => :get %>
