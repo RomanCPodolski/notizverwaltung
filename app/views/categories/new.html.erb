@@ -1,0 +1,7 @@
+<h4>neue KAtegorie anlegen</h4>
+<%= form_for :category do |f| %>
+	<div class="form-group">
+		<%= f.text_field :name, class: "form-control", :placeholder => t('placeholder_note_heading')%>
+		<%= f.submit t('submit'), :class => "btn btn-default btn-sm" %>
+		<% end %>
+	</div>

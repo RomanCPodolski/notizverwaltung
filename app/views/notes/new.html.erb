@@ -21,7 +21,7 @@
         <h4 class="modal-title" id="myModalLabel">Neue Kategorie</h4>
       </div>
       <div class="modal-body">
-        <%= form_for Category.new do |c| %>
+        <%= form_for :category do |c| %>
     <div class="form-group">
         <p>
           <%= c.text_area :name, class: "form-control", :placeholder => t('placeholder_note_message')%>
@@ -39,8 +39,9 @@
 </div><!-- /.modal -->
 
 
-      
+
     	<%= button_to "Zurück", notes_path, :class => "btn btn-default btn-sm inbox-sf-add-btn tip", :method => :get %>
+      <%= button_to "neue Kategorie", new_category_path, :class => "btn btn-default btn-sm inbox-sf-add-btn tip" %>
   	</div>
 
 <!--%= f.collection_select(:note, :category_id, Author.all, :id, :name_with_initial, prompt: true) %-->
