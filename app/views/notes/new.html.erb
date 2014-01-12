@@ -2,7 +2,7 @@
 	<div class="form-group">
 		<%= f.text_field :heading, class: "form-control", :placeholder => t('placeholder_note_heading')%>
    		<%= f.text_area :message, class: "form-control", rows:"15", :placeholder => t('placeholder_note_message')%>
-   		<%= f.text_field :due_at,  class: "form-control", :placeholder => t('placeholder_due_at') %>
+   		<%= f.date_field :due_at,  class: "form-control", :placeholder => t('placeholder_due_at') %>
    		<!--%= f.label t.('sign_note_to') %-->
    		<%= f.collection_select :signed_to, User.all, :id, :name %>
    		<%= f.collection_select :status, Status.all, :id, :name %>
