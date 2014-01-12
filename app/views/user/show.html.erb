@@ -7,7 +7,8 @@ else
  end %></h1>
 
 <%= render partial: "user", object: @user %>
-
+<div class ="row">
+	<div class="col-cs-6">
 <% if !@user.notes.blank? %>
 	<div class="panel-group" id="accordion">
 	  <% for note in @user.notes %>
@@ -46,6 +47,11 @@ else
 			    </div>
 			</div>
 	<% end %>
+</div>
+</div>
+<div class ="col-xs-6">
+	hier sinnvollen content einfügen
+</div>
 </div>
 <% else %>
   Bisher keine Notes verfasst  
