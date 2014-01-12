@@ -1,61 +1,40 @@
-<h1>
 
-<%= if current_user == @user
-	"Dein Profil"
-else
- 	"Profil von #{@user.name}"
- end %></h1>
+
+<% if current_user == @user%>
+<h1><%="Dein Profil"%></h1>
+<%else%>
+<h1><%="Profil von #{@user.email}"%></h1>
+<% end %>
+
 
 <%= render partial: "user", object: @user %>
+
 <div class ="row">
 	<div class="col-xs-6">
-<% if !@user.notes.blank? %>
-	<div class="panel-group" id="accordion">
-	  <% for note in @user.notes %>
-	    <div class="panel-group" id="accordion">
-  		  <div class="panel panel-default">
-    		<div class="panel-heading">
-      		  <h4 class="panel-title">
-				<%= link_to note.heading, "#collapse#{note.id}", :data => {:toggle => "collapse", :parent => "#accordion" } %>
-			   </h4>
-			  </div>
-			 <div id= <%="collapse#{note.id}" %> class="panel-collapse collapse in">
-      		   <div class="panel-body profile_buttons">
-        		 <%=note.message%>
-        	     <% if current_user == note.author %>
-				   <%= button_to "löschen", note_path(note), :class => "btn btn-default btn-sm", method: :delete, data: { confirm: 'wirklich löschen?' } %>
-					<%= button_to "bearbeiten", edit_note_path(note),:class => "btn btn-default btn-sm", method: :get %>
-					  <% else %>
-					    Du kannst nur deine eigenen Notes Bearbeiten oder löschen
-					  <% end %>
-
-					  <% if !note.comments.blank? %>
-					  Kommentare
-					    <% for c in note.comments %>
-					    
-					      <p><%= c.heading %> von <%= link_to c.user.name, user_path(c.user) %>
-					      <%= image_tag c.user.gravatar_url(:rating => 'R',:size => 50, :secure => true)%></p>
-					      <p><%= c.body %></p>
-
-					    <% end %>
-					  <% else %>
-					    
-					  <% end %>
-
-      				 </div>
-    		       </div>
-			    </div>
-			</div>
-	<% end %>
+		<% if current_user == @user %>
+		<h3><%="Deine Notes"%></h3>
+		<% else %>
+		<h3><%="Notes von #{@user.email}"%></h3>
+		<% end %>
+		<% if !@user.notes.blank? %>
+		<%= render partial: "notes/notes_accordion",locals: {notes: @user.notes, action: "author"} %>
+		<% else %>
+		Bisher keine Notes verfasst
+		<% if current_user == @user %>
+		<%= link_to "Jetzt eine Anlegen?", new_note_path %>
+		<% end %>
+		<% end %>
+	</div>
+	<div class="col-xs-6">
+		<% if current_user == @user %>
+		<h3><%="An dich zugewiesene Notes"%></h3>
+		<% else %>
+		<h3><%="An #{@user.email} zugewiesene Notes"%></h3>
+		<% end %>
+		<% if !@user.notes_assigend.blank? %>
+		<%= render partial: "notes/notes_accordion",locals: {notes: @user.notes_assigend, action: "sigend_to"} %>
+		<% else %>
+			<%= "Momentan sind noch keine notes an #{@user.email} zugewiesen" %> 
+		<% end %>
+	</div>
 </div>
-</div>
-<div class="col-xs-6">
-	
-</div>
-</div>
-<% else %>
-  Bisher keine Notes verfasst  
-  <%= if current_user == @user
-   link_to "Jetzt eine Anlegen?", new_note_path
-   end %>
-<% end %>

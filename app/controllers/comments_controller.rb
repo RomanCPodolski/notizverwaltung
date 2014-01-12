@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
     @comment = @note.comments.create!(comment_params)
     @comment.user_id = current_user.id
     @comment.save
-    redirect_to @note
+    redirect_to :back
 
   end
 

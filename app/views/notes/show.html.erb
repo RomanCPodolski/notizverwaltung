@@ -19,7 +19,7 @@
 				<%= comment.heading %>
 				 von 
 				 <%= link_to comment.user.name, user_path(comment.user) %>
-				 <!--%= image_tag comment.user.gravatar_url(:rating => 'R', :secure => true) %-->
+				 <%= image_tag comment.user.gravatar_url(:rating => 'R',:size => 40, :secure => true) %>
 			</p>
 			<p>
 				<%= comment.body %>
