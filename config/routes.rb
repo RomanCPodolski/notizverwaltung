@@ -1,4 +1,4 @@
-Notizverwaltung::Application.routes.draw do
+  Notizverwaltung::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   devise_scope :user do
     get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_private_session
@@ -17,6 +17,8 @@ Notizverwaltung::Application.routes.draw do
   resources :notes do
     resources :comments, :only => [:create]
   end
+
+  resources :category, :only => [:create]
 
   resources :user
 
