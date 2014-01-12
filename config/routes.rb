@@ -18,7 +18,7 @@
     resources :comments, :only => [:create]
   end
 
-  resources :category
+  resources :categories, :only => [:create]
 
   resources :user
 
@@ -32,6 +32,7 @@
   post 'notes/export_json' => 'notes#export_json'
   post 'notes/import_json' => 'notes#import_json'
   post 'notes/upload' => 'notes#upload'
+  post 'categories/new' 
     # You can have the root of your site routed with "root"
   root 'notes#index'
 

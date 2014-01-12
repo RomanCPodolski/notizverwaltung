@@ -1,13 +1,15 @@
 class CategoriesController < ApplicationController
+	
 	def new
-		#@category = Category.new
+		@category = Category.new
+		
 	end
 
 	def create
-		#@note = Note.find(params[:note_id])
-		@category = @category.create!(category_params)
+		
+		@category = Category.new(category_params)
 		@category.save
-		redirect_to @category
+		redirect_to :back
 	end
 
 	def index
