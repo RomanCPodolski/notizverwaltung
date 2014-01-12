@@ -6,8 +6,8 @@
 	<%else%>
 		<% @notes.each do |note| %>
   			<li>
-  				<%= link_to note.heading, note_path(@note) %> von 
-  				<!-- %= link_to note.user.name, user_path(note.user)% -->
+  				<%= link_to note.heading, edit_note_path(note) %> von 
+  				<%=link_to note.author.name, user_path(note.author) %>
   			</li>	
   		<% end %>
 	<% end %>
