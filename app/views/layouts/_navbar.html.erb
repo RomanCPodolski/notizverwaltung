@@ -13,51 +13,14 @@
           <ul class="nav navbar-nav navbar-right">
 
           	<% if user_signed_in? %>
-				      <li><span class="glyphicon glyphicon-user"><%= link_to current_user.name, user_path(current_user) %></li>
+				      <li><%= image_tag current_user.gravatar_url(:rating => 'R',:size => 50, :secure => true)%>
+              </li><li><%= link_to current_user.name, user_path(current_user) %></li>
 				      <li><%= link_to t('sign_out_link'), "/sign_out" %></li>
 				    <% else %>
 
-             <!-- Button trigger modal -->
-              <a class="navbar-link" data-toggle="modal" data-target="#myModal">
-                <span class="glyphicon glyphicon-user"></span><%=t('sign_in_modal')%>
-              </a>
-
-              <!-- Modal -->
-              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                      <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                    </div>
-                    <div class="modal-body">
-                      
-                    <form class="form-signin" role="form">
-                      <h2 class="form-signin-heading">Please sign in</h2>
-                      <input type="text" class="form-control" placeholder="Email address" required autofocus>
-                      <input type="password" class="form-control" placeholder="Password" required>
-                      <label class="checkbox">
-                        <input type="checkbox" value="remember-me"> Remember me
-                      </label>
-                      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-                    </form>
-
-
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                      
-                      <%= button_to 'Register', new_user_registration_path, class: "btn btn-primary" %>
-                      <%= button_to t('sign_in_facebook'), user_omniauth_authorize_path(:facebook), class: "btn btn-primary" %>
-                      <%= button_to t('sign_in_github'), user_omniauth_authorize_path(:github), class: "btn btn-primary" %>
-
-
-                    </div>
-                  </div><!-- /.modal-content -->
-                </div><!-- /.modal-dialog -->
-              </div><!-- /.modal -->
-
-				      
+             <!--%= link_to('Login', new_user_session_path)  %-->
+              <%= render 'devise/menu/registration_items' %>
+              <%= render 'devise/menu/login_items' %>				      
 			       <% end %>
           </ul>
 

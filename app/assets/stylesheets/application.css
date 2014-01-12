@@ -12,3 +12,15 @@
  *= require_tree .
  *= require yeti-bootswatch
  */
+
+.export {
+	float: right;
+}
+
+.import {
+	float: left;
+}
+
+.glyphicon-user {
+	margin-top: 15px;
+}

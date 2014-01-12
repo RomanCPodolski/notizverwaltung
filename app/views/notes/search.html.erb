@@ -1,11 +1,14 @@
-<h2>Deine Suche gab Folgendes Zurück<h2>
+<h2>Deine Suche gab Folgendes zurück<h2>
 
 <ul>
 	<% if @notes.blank? %>
-		<%= "Leider wurde mit der Suchanfrage \"#{:search}\" nichts gefunden" %>
-	<%else%> 
+		<%= "Leider wurde mit der Suchanfrage \"#{params[:search]}\" nichts gefunden" %>
+	<%else%>
 		<% @notes.each do |note| %>
-  			<li><%= link_to note.heading, notes_path(note) %> von <%= link_to note.user.name, user_path(note.user)%></li>
+  			<li>
+  				<%= link_to note.heading, notes_path(note) %> von 
+  				<!-- %= link_to note.user.name, user_path(note.user)% -->
+  			</li>	
   		<% end %>
 	<% end %>
 </ul>

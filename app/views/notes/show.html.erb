@@ -1,0 +1,64 @@
+<p>
+  	<h2><%= @note.heading %></h2>
+</p>
+<p>
+  	<%= @note.message %>
+</p>
+<p>
+	<%= @note.status_id %>
+</p>
+<p>
+  	<%= link_to @note.author.name, user_path(@note.author) %>
+</p>
+
+<h3>Kommentare</h3>
+	
+	<% for comment in @note.comments %>
+		<div>
+			<p>
+				<%= comment.heading %>
+				 von 
+				 <%= link_to comment.user.name, user_path(comment.user) %>
+				 <!--%= image_tag comment.user.gravatar_url(:rating => 'R', :secure => true) %-->
+			</p>
+			<p>
+				<%= comment.body %>
+			</p>
+		</div>
+	<% end %>
+
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#commentModal">
+  Kommentieren
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Kommentar verfassen</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_for [@note, Comment.new] do |f| %>
+		<div class="form-group">
+				<p>
+					<%= f.text_field :heading, class: "form-control", :placeholder => t('placeholder_note_heading')%>
+				</p>
+				<p>
+					<%= f.text_area :body, class: "form-control", :placeholder => t('placeholder_note_message')%>
+				</p>
+	    		<%= f.submit t('submit') %>
+	  		</div>
+  		<% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <!--button type="button" class="btn btn-primary">Save changes</button-->
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<%= button_to "Zurück", notes_path, :class => "btn btn-default", :method => :get %>

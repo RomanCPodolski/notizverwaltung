@@ -5,13 +5,10 @@ class Note < ActiveRecord::Base
 
 	belongs_to :author, :class_name => "User"
 	belongs_to :signed_to, :class_name => "User"
+	belongs_to :status
+	belongs_to :category
 	
 	has_many :comments
-
-	def self.search(search)
-	  search_condition = "%" + search + "%"
-	  find(:all, :conditions => ['message LIKE ? OR heading LIKE ?', search_condition, search_condition])
-	end
 
 	def self.save(upload)
 		json =  upload['datafile'].original_filename
@@ -24,9 +21,10 @@ class Note < ActiveRecord::Base
 		end
 	end
 
-	def hasOwner? #Check ob dieses Note jemandem gehört
+	def hasOwner? #Check ob diese Note jemandem gehört
 		unless self.author_id.nil? || self.author_id == 0
 			User.find(self.author_id)
 		end
+
 	end
 end

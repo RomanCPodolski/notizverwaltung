@@ -1,18 +1,24 @@
 Notizverwaltung::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   devise_scope :user do
-   get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_private_session
+    get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_private_session
   end
   get "notes/index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+  # resources :user do  
+  #     resources :notes do
+  #       :comments
+  #     end
+  # end
+
   resources :notes do
-    
+    resources :comments, :only => [:create]
   end
 
-  resources :user, :comments
+  resources :user
 
   #get 'user/:id' => 'user#show'
   #get 'user/:id/update' => 'user#update'

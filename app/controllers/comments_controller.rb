@@ -4,9 +4,13 @@ class CommentsController < ApplicationController
   end
 
   def create
-  	@comment = Comment.new(params)
+
     @note = Note.find(params[:note_id])
-    redirect_to note_path(@note)
+    @comment = @note.comments.create!(comment_params)
+    @comment.user_id = current_user.id
+    @comment.save
+    redirect_to @note
+
   end
 
   def index
@@ -14,6 +18,12 @@ class CommentsController < ApplicationController
 
   def destroy
   end
+
+  private
+  
+    def comment_params
+      params.require(:comment).permit(:heading,:body)
+    end
 
   
 end

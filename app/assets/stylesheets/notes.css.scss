@@ -1,3 +1,13 @@
 // Place all the styles related to the notes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+textarea#note_heading {
+	width: 600px;
+	height: 30px;
+}
+
+textarea#note_message {
+	width: 600px;
+	height: 300px;	
+}

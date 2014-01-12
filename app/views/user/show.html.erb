@@ -26,7 +26,21 @@ else
 					<%= button_to "bearbeiten", edit_note_path(note),:class => "btn btn-default btn-sm", method: :get %>
 					  <% else %>
 					    Du kannst nur deine eigenen Notes Bearbeiten oder löschen
-					   <% end %>
+					  <% end %>
+
+					  <% if !note.comments.blank? %>
+					  Kommentare
+					    <% for c in note.comments %>
+					    
+					      <p><%= c.heading %> von <%= link_to c.user.name, user_path(c.user) %>
+					      <%= image_tag c.user.gravatar_url(:rating => 'R',:size => 50, :secure => true)%></p>
+					      <p><%= c.body %></p>
+
+					    <% end %>
+					  <% else %>
+					    
+					  <% end %>
+
       				 </div>
     		       </div>
 			    </div>
@@ -39,5 +53,3 @@ else
    link_to "Jetzt eine Anlegen?", new_note_path
    end %>
 <% end %>
-
-

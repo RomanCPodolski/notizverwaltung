@@ -16,6 +16,22 @@
 //= require_tree .
 //= require bootstrap
 
-$(function () {
-	$("#note_due_at").datepicker();
-});
+//$(function () {
+//	$("#note_due_at").datepicker();
+//});
+
+
+//check user selection before import JSON file into db
+//$(document).ready(function() {
+    // $('submit[name=commit]').bind("click",function() {
+    //     var filepath = $('input#filedata').val(); 
+    //     if(filepath=='') {
+    //         alert("empty input file");
+    //     }
+    //     return false;
+    // }); 
+
+//     $("input.import").onchange = function(e) { 	//input#filedata
+// 	  console.log(e);
+// 	};
+// });
