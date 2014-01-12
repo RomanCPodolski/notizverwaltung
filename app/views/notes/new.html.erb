@@ -4,9 +4,42 @@
    		<%= f.text_area :message, class: "form-control", rows:"15", :placeholder => t('placeholder_note_message')%>
    		<%= f.date_field :due_at,  class: "form-control", :placeholder => t('placeholder_due_at') %>
    		<!--%= f.label t.('sign_note_to') %-->
-   		<%= f.collection_select :signed_to, User.all, :id, :name %>
-   		<%= f.collection_select :status, Status.all, :id, :name %>  
+   		<%= f.collection_select :signed_to, User.all, :id, :email %>
+   		<%= f.collection_select :status, Status.all, :id, :name %>
+      <%= f.collection_select :category, Category.all, :id, :name %>  
     	<%= f.submit t('submit'), :class => "btn btn-default btn-sm" %>
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#commentModal">
+  neue Kategorie
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Neue Kategorie</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_for Category.new do |c| %>
+    <div class="form-group">
+        <p>
+          <%= c.text_area :name, class: "form-control", :placeholder => t('placeholder_note_message')%>
+        </p>
+          <%= c.submit t('submit') %>
+        </div>
+      <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <!--button type="button" class="btn btn-primary">Save changes</button-->
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+      
     	<%= button_to "Zurück", notes_path, :class => "btn btn-default btn-sm inbox-sf-add-btn tip", :method => :get %>
   	</div>
 

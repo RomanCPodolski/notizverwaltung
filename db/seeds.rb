@@ -17,5 +17,5 @@
 #Status.create({"name"=>"Unterhose"})
 #Status.create({"name"=>"Erledigt"})
 
-#Category.create({"name"=>"Unterwaesche"})
-#Category.create({"name"=>"Sonstiges"})
+Category.create({"name"=>"Unterwaesche"})
+Category.create({"name"=>"Sonstiges"})
