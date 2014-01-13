@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   	# Include default devise modules. Others available are:
   	# :confirmable, :lockable, :timeoutable and :omniauthable
   	devise :database_authenticatable, :registerable,
-           :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook, :github] #:confirmable,
+           :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook, :github, :google]
 
            has_many :notes, inverse_of: :author, foreign_key: :author_id , :class_name => "Note"
            has_many :notes_assigend, inverse_of: :signed_to, foreign_key: :signed_to_id , :class_name => "Note"
@@ -26,13 +26,21 @@ class User < ActiveRecord::Base
            end
 
            def self.find_for_github_oauth(auth, signed_in_resource=nil)
-           	data = access_token.info
-           	user = User.where(:email => data["email"]).first
 
+           	user = User.where(:provider => auth.provider, :uid => auth.id).first
            	unless user
-           		user = User.create(name: data["name"],
+
+              if auth.info.name.nil?
+                name = auth.info.nickname
+              else
+                name = auth.info.name
+              end
+
+           		user = User.create(
+                name: name,
            			provider:auth.provider,
-           			email: data["email"],
+                uid:auth.uid,
+           			email: auth.info.email,
            			password: Devise.friendly_token[0,20]
            			)
            	end

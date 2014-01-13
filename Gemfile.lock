@@ -113,6 +113,7 @@ GEM
       mini_portile (~> 0.5.0)
     nokogiri (1.6.1-x86-mingw32)
       mini_portile (~> 0.5.0)
+    oauth (0.4.7)
     oauth2 (0.8.1)
       faraday (~> 0.8)
       httpauth (~> 0.1)
@@ -127,6 +128,13 @@ GEM
     omniauth-github (1.0.1)
       omniauth (~> 1.0)
       omniauth-oauth2 (~> 1.0)
+    omniauth-google (1.0.2)
+      multi_json
+      omniauth (~> 1.0)
+      omniauth-oauth
+    omniauth-oauth (1.0.1)
+      oauth
+      omniauth (~> 1.0)
     omniauth-oauth2 (1.0.3)
       oauth2 (~> 0.8.0)
       omniauth (~> 1.0)
@@ -231,6 +239,7 @@ DEPENDENCIES
   omniauth
   omniauth-facebook (= 1.4.0)
   omniauth-github
+  omniauth-google
   pg
   rabl
   rails (= 4.0.0)
