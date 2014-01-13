@@ -34,8 +34,10 @@ gem 'jbuilder', '~> 1.2'
 gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'
 gem 'omniauth-github'
-gem 'omniauth-google'
+gem 'omniauth-google-oauth2'
 
+# Google Api
+gem 'google-api-client'
 # Gravatar
 gem 'gravtastic'
 
