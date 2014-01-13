@@ -1,4 +1,4 @@
-# source 'https://rubygems.org'
+source 'https://rubygems.org'
 
 # JSON lib
 gem 'rabl'
@@ -63,6 +63,10 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
+
+# Heroku
+gem 'rails_12factor', group: :production
+
 
 #Use debugger
 gem 'debugger', group: [:development, :test]

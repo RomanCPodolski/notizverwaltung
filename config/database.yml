@@ -55,13 +55,13 @@ test: &test
 
 production:
   adapter: postgresql
-  host: ec2-54-204-43-139.compute-1.amazonaws.com
+  host: ec2-107-20-191-205.compute-1.amazonaws.com
   port: 5432
   encoding: unicode
-  database: d6lemk9ffjjqck
+  database: d6kde728n29grg
   pool: 5
-  username: tyqkuctjignnxt
-  password: acV7tug168EtiPNr8NGXWDTuKJ
+  username: ktlyclyhihxggn
+  password: m1cbJeoHdST_bcNs_2phEpWm1A
 
 
 cucumber:
