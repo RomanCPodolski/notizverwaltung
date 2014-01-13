@@ -231,7 +231,7 @@ Devise.setup do |config|
   require "omniauth-facebook"
   config.omniauth :facebook, '582968218443424', '0fb46a795587bbd39e76b00dfa4cd268' #:strategy_class => OmniAuth::Strategies::Facebook
     # we'll going to migrate to herdoku soon, so this config is going to change to {:scope => 'email, offline_access', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}} 
-  #config.omniauth :twitter , '4wf2Mu2KDXjyZn4fwovdw', 'In8972DQl42cgRLAvz6mtRtFPFSMb76gtutDR6LUk'
+  # config.omniauth :twitter , '4wf2Mu2KDXjyZn4fwovdw', 'In8972DQl42cgRLAvz6mtRtFPFSMb76gtutDR6LUk'
   config.omniauth :github, '463952f9bbf08707079d', 'ab6f13c43fbc8b552d7de0a8f14b5d3a4c6c2b70', :scope => 'user,public_repo'
 
   # ==> Warden configuration
