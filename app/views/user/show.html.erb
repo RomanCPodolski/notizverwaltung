@@ -17,7 +17,7 @@
 		<h3><%="Notes von #{@user.email}"%></h3>
 		<% end %>
 		<% if !@user.notes.blank? %>
-		<%= render partial: "notes/notes_accordion",locals: {notes: @user.notes, action: "author"} %>
+		<%= render partial: "notes/notes_accordion",locals: {notes: @user.notes, action: "author", user: @user} %>
 		<% else %>
 		Bisher keine Notes verfasst
 		<% if current_user == @user %>
@@ -32,7 +32,7 @@
 		<h3><%="An #{@user.email} zugewiesene Notes"%></h3>
 		<% end %>
 		<% if !@user.notes_assigend.blank? %>
-		<%= render partial: "notes/notes_accordion",locals: {notes: @user.notes_assigend, action: "sigend_to"} %>
+		<%= render partial: "notes/notes_accordion",locals: {notes: @user.notes_assigend, action: "sigend_to", user: @user} %>
 		<% else %>
 			<%= "Momentan sind noch keine notes an #{@user.email} zugewiesen" %> 
 		<% end %>

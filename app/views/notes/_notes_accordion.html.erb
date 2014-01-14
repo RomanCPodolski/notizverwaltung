@@ -1,6 +1,7 @@
 
 <div class="panel-group" id="<%="accordion_#{action}"%>">
 	<% for note in notes %>
+	<% if note.is_public || current_user == user %>
 	<div class="panel-group" id="<%="accordion_#{action}"%>">
 		<div class="panel panel-default">
 			<div class="panel-heading">
@@ -35,5 +36,6 @@
 				</div>
 			</div>
 		</div>
+		<% end %>
 		<% end %>
 	</div>

@@ -10,7 +10,9 @@
       <%= f.label "Status" %>
    		<%= f.collection_select :status, Status.all, :id, :name %>
       <%= f.label "Kategorie" %>
-      <%= f.collection_select :category, Category.all, :id, :name %>  
+      <%= f.collection_select :category, Category.all, :id, :name %>
+      <%= f.label "Note öffentlich machen?" %> 
+      <%= f.check_box :is_public %> 
     	<%= f.submit t('submit'), :class => "btn btn-default btn-sm" %>
 <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#categoryModal">
   neue Kategorie

@@ -19,6 +19,7 @@ class NotesController < ApplicationController
 			if user_signed_in?
 				u.author_id = current_user.id
 			end
+			u.is_public = note_params[:is_public]
 			u.signed_to_id = note_params[:signed_to]
 			u.status_id = note_params[:status]
 			u.category_id = note_params[:category]
@@ -124,6 +125,6 @@ class NotesController < ApplicationController
 	# private method to parse method parameter hashes
 	private
 		def note_params
-			params.require(:note).permit(:id,:heading,:message,:due_at,:signed_to,:status, :category)
+			params.require(:note).permit(:id,:heading,:message,:due_at,:signed_to,:status, :category, :is_public)
 		end
 end
