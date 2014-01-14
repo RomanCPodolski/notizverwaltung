@@ -19,7 +19,9 @@
 		</h1>
 <% end %>
 <div>
-<%= button_to "Neue Notiz", new_note_path, :class => "btn btn-default btn-sm", :method => :get %>
+<% if user_signed_in? %>
+	<%= button_to "Neue Notiz", new_note_path, :class => "btn btn-default btn-sm", :method => :get %>
+<% end %>
 
 <!-- SEARCH -->
 <%= render :partial => 'notes/search' %>
