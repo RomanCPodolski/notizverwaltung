@@ -3,6 +3,21 @@
 * Ruby version 1.9.3
 * Rails 4.0.0
 
+== Setup
+
+== Contributing
+
+== Authors
+
+=== Roman C. Podolski
+https://github.com/JavaTheHood
+
+=== Janek Schoenwetter
+https://github.com/k-mehl
+
+=== Dominik Irimi
+# https://github.com/
+
 == MIT - License
 
 The MIT License (MIT)
@@ -26,4 +41,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
