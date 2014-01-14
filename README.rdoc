@@ -9,14 +9,14 @@
 
 == Authors
 
-=== Roman C. Podolski
+==== Roman C. Podolski
 https://github.com/JavaTheHood
 
-=== Janek Schoenwetter
+==== Janek Schoenwetter
 https://github.com/k-mehl
 
-=== Dominik Irimi
-# https://github.com/
+==== Dominik Irimi
+
 
 == MIT - License
 
