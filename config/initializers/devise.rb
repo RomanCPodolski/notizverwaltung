@@ -234,7 +234,7 @@ Devise.setup do |config|
   config.omniauth :github, '463952f9bbf08707079d', 'ab6f13c43fbc8b552d7de0a8f14b5d3a4c6c2b70', :scope => 'user,public_repo'
   require "omniauth-google-oauth2"
   config.omniauth :google_oauth2, '131784596523.apps.googleusercontent.com', 'nuOw18_rWk8rC1MyX-r_zA5H',     {
-      :name => "google_oauth2",
+      :name => "google",
       :scope => "userinfo.email, userinfo.profile, plus.me, http://gdata.youtube.com",
       :prompt => "select_account",
       :image_aspect_ratio => "square",
