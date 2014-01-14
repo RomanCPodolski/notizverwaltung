@@ -233,7 +233,9 @@ Devise.setup do |config|
   require "omniauth-github"
   config.omniauth :github, '463952f9bbf08707079d', 'ab6f13c43fbc8b552d7de0a8f14b5d3a4c6c2b70', :scope => 'user,public_repo'
   require "omniauth-google-oauth2"
-  config.omniauth :google_oauth2, '131784596523.apps.googleusercontent.com', 'nuOw18_rWk8rC1MyX-r_zA5H',     {
+  #
+  # heroku config
+  config.omniauth :google_oauth2, '131784596523-ea4898uf9kf114enminl58okcaq6dpgk.apps.googleusercontent.com', '73w6QQN3uVv8hzZNukSwCxBI',     {
       :name => "google",
       :scope => "userinfo.email, userinfo.profile, plus.me, http://gdata.youtube.com",
       :prompt => "select_account",
