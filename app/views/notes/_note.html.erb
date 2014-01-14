@@ -1,15 +1,19 @@
 <tr>
 	<td><%= link_to note.heading, note_path(note) %></td>
 	<% if note.hasOwner? %>
-	 	<td><%=link_to note.author.email, user_path(note.author) %></td>
-	 <% else %> 
-	 	<td>"Gast"</td>
-	 <% end %>
-	 <td><%=link_to note.signed_to.email, user_path(note.signed_to) %></td>
-	<% if user_signed_in? && current_user == note.author %>
-		<td><%= button_to "löschen", note_path(note),:class => "btn btn-default btn-sm", method: :delete, data: { confirm: 'wirklich löschen?' } %></td>
-		<td><%= button_to "bearbeiten", edit_note_path(note),:class => "btn btn-default btn-sm", method: :get %></td>
+	<td><%=link_to note.author.email, user_path(note.author) %></td>
+	<% else %> 
+	<td>"Gast"</td>
+	<% end %>
+	<td><%=link_to note.signed_to.email, user_path(note.signed_to) %></td>
+	<% if user_signed_in? %>
+	<% if current_user == note.author %>
+	<td><%= button_to "löschen", note_path(note),:class => "btn btn-default btn-sm", method: :delete, data: { confirm: 'wirklich löschen?' } %></td>
+	<td><%= button_to "bearbeiten", edit_note_path(note),:class => "btn btn-default btn-sm", method: :get %></td>
 	<% else %>
-		<td>Bitte melde dich an um Posts bearbeiten oder löschen zu können</td>
+	<td>Du bist nicht berechtigt diese Note zu bearbeiten oder zu löschen</td>
+	<% end %>
+	<% else %>
+	<td>Bitte melde dich an um Posts bearbeiten oder löschen zu können</td>
 	<% end %>
 </tr>
