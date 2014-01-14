@@ -246,7 +246,7 @@ Devise.setup do |config|
   # heroku config
   config.omniauth :google_oauth2, '131784596523-ea4898uf9kf114enminl58okcaq6dpgk.apps.googleusercontent.com', '73w6QQN3uVv8hzZNukSwCxBI',     {
       :name => "google",
-      :scope => "userinfo.email, userinfo.profile, plus.me, http://gdata.youtube.com",
+      :scope => "userinfo.email, userinfo.profile, https://www.googleapis.com/auth/calendar",
       :prompt => "select_account",
       :image_aspect_ratio => "square",
       :image_size => 50
