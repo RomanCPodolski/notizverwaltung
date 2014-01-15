@@ -15,6 +15,7 @@ https://github.com/JavaTheHood
 === Janek Schoenwetter
 
 === Dominik Irimi
+https://github.com/DominikGithub
 
 == MIT - License
 
