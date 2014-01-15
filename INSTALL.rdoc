@@ -1,14 +1,11 @@
 == Install instructions for Notizverwaltung
 
-1. install a git repository browser and clone the git repository from github.com
-(we recommend to use smartgit, as it's one of the most userfriendly tools available)
+1. install a git repository browser and clone the git repository from github.com (we recommend to use smartgit, as it's one of the most userfriendly tools available)
 
-2. the wepapps backend is based on a postgresql database. (postgresql.org)
-(if you would like to view the db tables outside the app, install pgadmin from the same publisher
+2. the wepapps backend is based on a postgresql database. (postgresql.org) (if you would like to view the db tables outside the app, install pgadmin from the same publisher
 
-3. install ruby on rails by installer from railsinstaller.org
-(available for win or mac)
-- contents
+3. install ruby on rails by installer from railsinstaller.org (available for win or mac)
+=contents
  * Ruby 1.9.3
  * Rails 3.2
  * Bundler
