@@ -1,0 +1,28 @@
+Install instructions for Notizverwaltung
+
+1. install a git repository browser and clone the git repository from github.com
+(we recommend to use smartgit, as it's one of the most userfriendly tools available)
+
+2. the wepapps backend is based on a postgresql database. (postgresql.org)
+(if you would like to view the db tables outside the app, install pgadmin from the same publisher
+
+3. install ruby on rails by installer from http://railsinstaller.org
+(available for win or mac)
+== contents ==
+* Ruby 1.9.3
+* Rails 3.2
+* Bundler
+* Git
+* Sqlite
+* TinyTDS
+* SQL Server Support
+* DevKit
+
+4. start the ruby command line tool and navigate to your local repository folder
+5. run "gem install rails"
+6. run "bundle install" to download missing plugins
+7. run "ruby update" 
+8. run "rake db:migrate" to generate the database
+9. run "rails server" to start the server
+
+10. if you open "localhost:3000" in your webbrowser you will see the webapps index page
