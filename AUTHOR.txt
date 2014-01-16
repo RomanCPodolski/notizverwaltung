@@ -1,6 +1,5 @@
 Dominik Irimi (irimi@hm.edu)
-- bearbeiten von Notizen
-- löschen von Notizen
+- bearbeiten/löschen von Notizen
 - Suchfunktion von Notizen
 - Import/Export von Notizen als JSON Dokumente
 
@@ -16,4 +15,5 @@ Roman Podolski (podolski@hm.edu)
 - Login/out und Registrierung (Github, Facebook, Google, Email)
 - Heroku Anbindung
 - Zuweisen von Notizen an andere Nutzer
-- Anlegen des Verfallsdatums
+- Anlegen des Verfallsdatums einer Notiz
+- Anlegen neuer Notizen
