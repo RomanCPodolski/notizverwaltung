@@ -1,6 +1,19 @@
-Dominik Irimi
+Dominik Irimi (irimi@hm.edu)
+- bearbeiten von Notizen
+- löschen von Notizen
+- Suchfunktion von Notizen
+- Import/Export von Notizen als JSON Dokumente
 
 Janek Schoenwetter
+- kommentieren von Notizen
+- Anlegen von neuen Kategorien
+- Arbeitsstatus eienr Notiz festlegen
+- zuweisen von Kategorien an Notizen
 
-Roman Podolski
-podolski@hm.edu
+
+Roman Podolski (podolski@hm.edu)
+- Profilverwaltung (Gravatar Anbindung)
+- Login/out und Registrierung (Github, Facebook, Google, Email)
+- Heroku Anbindung
+- Zuweisen von Notizen an andere Nutzer
+- Anlegen des Verfallsdatums
