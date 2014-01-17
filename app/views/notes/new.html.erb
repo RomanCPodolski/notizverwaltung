@@ -6,11 +6,11 @@
    		<!--%= f.label t.('sign_note_to') %-->
    		<%= f.collection_select :signed_to, User.all, :id, :email %>
    		<%= f.collection_select :status, Status.all, :id, :name %>
-      <%= f.collection_select :category, Category.all, :id, :name %>  
+      <%= f.collection_select :category, Category.all, :id, :name %>
+      <%= link_to "Neue Kategorie", new_category_path %>
     	<%= f.submit t('submit'), :class => "btn btn-default btn-sm" %>
 
-    	<%= button_to "Zurück", notes_path, :class => "btn btn-default btn-sm inbox-sf-add-btn tip", :method => :get %>
-      <%= link_to "Neue Kategorie", new_category_path %>
+    	<%= button_to "Zurück", notes_path, :class => "btn btn-default btn-sm inbox-sf-add-btn tip", :method => :get %>      
   	</div>
 <% end %>
 

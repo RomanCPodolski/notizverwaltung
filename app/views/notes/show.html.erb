@@ -4,11 +4,21 @@
 <p>
   	<%= @note.message %>
 </p>
-<p>
-	<%= @note.status_id %>
+<p>Status:
+	<%=  @note.status.name %>
 </p>
+<p>Kategorie:
+	<% if @note.category_id %>
+	<%= @note.category.name %>
+	<% end %>
+</p>
+
 <p>
+	<% if user_signed_in? %>
   	<%= link_to @note.author.name, user_path(@note.author) %>
+  	<% else %>
+  	<h1>!!! Bitte melde dich an !!!</h1>
+  	<% end %>
 </p>
 
 <h3>Kommentare</h3>
