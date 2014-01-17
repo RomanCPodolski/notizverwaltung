@@ -7,6 +7,9 @@
 <p>Status:
 	<%=  @note.status.name %>
 </p>
+<p>zu erledigen bis:
+	<%= @note.due_at %>	
+</p>
 <p>Kategorie:
 	<% if @note.category_id %>
 	<%= @note.category.name %>
