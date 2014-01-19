@@ -25,15 +25,16 @@ Follow the instructions on http://railsapps.github.io/installrubyonrails-ubuntu.
 1. install a git repository browser and clone the git repository from github.com (we recommend to use smartgit, as it's one of the most userfriendly tools available)
 
 === The Database - Postgresql
-2. the wepapps backend is based on a postgresql database. (postgresql.org) (if you would like to view the db tables outside the app, install pgadmin from the same publisher
-
-
+2. the wepapps backend is based on a postgresql database. (postgresql.org) (if you would like to view the db tables outside the app, install pgadmin from the same publisher. You'll need to set up a login role in your local postgresql database (you can find further information on login roles at http://www.postgresqltutorial.com/postgresql-roles/).
+Credentials for the login role are
+ * username: notizverwaltung
+ * password: notizverwaltung 
 
 4. start the ruby command line tool and navigate to your local repository folder
 5. run "gem install rails"
 6. run "bundle install" to download missing plugins
 7. run "ruby update" 
-8. run "rake db:migrate" to generate the database
+8. run "rake db:setup" to generate the database
 9. run "rails server" to start the server
 
 10. if you open "localhost:3000" in your webbrowser you will see the webapps index page
