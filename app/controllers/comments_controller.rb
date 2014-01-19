@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   
+  # Renders form for new Comment
   def new
   end
 

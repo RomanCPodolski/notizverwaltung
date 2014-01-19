@@ -1,2 +1,3 @@
+# Unused
 module NotesHelper
 end

@@ -1,3 +1,6 @@
+# = User Model
+#
+# Autor: Roman C. Podolski - podolski@hm.edu, Janek Schoenwetter - schoenwe@hm.edu
 class User < ActiveRecord::Base
 	# include for profile picture
 	include Gravtastic
@@ -13,6 +16,7 @@ class User < ActiveRecord::Base
    has_many :notes_assigend, inverse_of: :signed_to, foreign_key: :signed_to_id , :class_name => "Note"
    has_many :comments
 
+   # 
    def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
     unless user
