@@ -1,5 +1,11 @@
 = Notizverwaltung WebApp
 
+"Notizverwaltung" is a Ruby On Rails based web application deveopted on Hochschule München during
+the module "Webtechniken". It's it was devloped for training purposes.
+
+"Notizverwaltung" enables you to store and share private Notes with your firends, commilitones and coworkes 
+
+
 * Ruby version 1.9.3
 * Rails 4.0.0
 
@@ -10,12 +16,14 @@
 == Authors
 
 === Roman C. Podolski
-https://github.com/JavaTheHood
+podolski@hm.edu
 
 === Janek Schoenwetter
+schoenwe@hm.edu
+
 
 === Dominik Irimi
-https://github.com/DominikGithub
+irimi@hm.edu
 
 == MIT - License
 

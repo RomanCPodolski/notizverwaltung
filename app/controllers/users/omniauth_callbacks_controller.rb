@@ -1,11 +1,15 @@
 # This Contoller handles callbacks from third party websites,
 # like facebook, google or github. It's part of the communication with Devise, Ominauth
 # and the authentication-oauth2-system of the app
+#
+# Author: Roman C. Podolski - podolski@hm.edu
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
 	# Handles the callback hash from Facebook for authentification.
 	# It finds or creates the user in the Database and starts a new session.
 	# Also a flash message will be set for success or fails
+	#
+	# Author: Roman C. Podolski - podolski@hm.edu
 	def facebook
 		# You need to implement the method below in your model (e.g. app/models/user.rb)
 		@user = User.find_for_facebook_oauth(request.env["omniauth.auth"], current_user)
@@ -22,6 +26,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 	# Handles the callback hash from Google for authentification.
 	# It finds or creates the user in the Database and starts a new session.
 	# Also a flash message will be set for success or fails
+	#
+	# Author: Roman C. Podolski - podolski@hm.edu
 	def google
       # You need to implement the method below in your model (e.g. app/models/user.rb)
       @user = User.find_for_google_oauth2(request.env["omniauth.auth"], current_user)
@@ -38,6 +44,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   	# Handles the callback hash from Github for authentification.
 	# It finds or creates the user in the Database and starts a new session.
 	# Also a flash message will be set for success or fails
+	#
+	# Author: Roman C. Podolski - podolski@hm.edu
   	def github
   		@user = User.find_for_github_oauth(request.env["omniauth.auth"], current_user)
 

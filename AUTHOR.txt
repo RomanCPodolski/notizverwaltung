@@ -4,19 +4,21 @@ Dominik Irimi (irimi@hm.edu)
 - Import/Export von Notizen als JSON Dokumente
 - App Styling
 
-Janek Schoenwetter
+Janek Schoenwetter (schoenwe@hm.edu)
 - kommentieren von Notizen
 - Anlegen von neuen Kategorien
 - Arbeitsstatus einer Notiz festlegen
 - zuweisen von Kategorien an Notizen
 
 Roman Podolski (podolski@hm.edu)
-- Profilverwaltung (Gravatar Anbindung)
+- Profilverwaltung (Gravatar Anbindung) und Profil Page
 - Login/out und Registrierung (Github, Facebook, Google, Email)
 - Heroku Anbindung
 - Einbindung von Bootstrap
 - Zuweisen von Notizen an andere Nutzer
 - Anlegen des Verfallsdatums einer Notiz
+- Veröffentlichung von Notizen
+- Anlegen von Kommentaren
 - Anlegen neuer Notizen
 
 
