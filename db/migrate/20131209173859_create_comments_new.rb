@@ -1,3 +1,4 @@
+# This migration will create the table comments
 class CreateCommentsNew < ActiveRecord::Migration
 def change
     create_table :comments do |t|

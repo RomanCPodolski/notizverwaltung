@@ -1,3 +1,4 @@
+# = User Controller
 class UserController < ApplicationController
   
   # shows the User with specific ID

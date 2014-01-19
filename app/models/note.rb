@@ -1,5 +1,7 @@
+# Model Note
 class Note < ActiveRecord::Base
 
+	# Validations
 	validates :message, presence: true, length: {minimum: 5}
 	validates :heading, presence: true
 
@@ -22,7 +24,8 @@ class Note < ActiveRecord::Base
 		end
 	end
 
-	def hasOwner? #Check ob diese Note jemandem gehört
+	# Will return true if this note is owned by someone
+	def hasOwner? 
 		unless self.author_id.nil? || self.author_id == 0
 			User.find(self.author_id)
 		end
