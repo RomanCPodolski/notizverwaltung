@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	
+	# include for profile picture
 	include Gravtastic
 	gravtastic
 
@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   	devise :database_authenticatable, :registerable,
    :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook, :github, :google]
 
+   # associations to other tables - inverse of needed for author and assigend to author
    has_many :notes, inverse_of: :author, foreign_key: :author_id , :class_name => "Note"
    has_many :notes_assigend, inverse_of: :signed_to, foreign_key: :signed_to_id , :class_name => "Note"
    has_many :comments

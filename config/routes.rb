@@ -14,12 +14,13 @@
   #     end
   # end
 
+  # nested resources - necessary to write a comment to choosen note.
   resources :notes do
     resources :comments, :only => [:create]
   end
 
+  
   resources :categories
-
   resources :user
 
   #get 'user/:id' => 'user#show'

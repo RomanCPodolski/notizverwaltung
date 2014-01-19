@@ -5,6 +5,17 @@ the module "Webtechniken". It's it was devloped for training purposes.
 
 "Notizverwaltung" enables you to store and share private Notes with your firends, commilitones and coworkes 
 
+Umfang der Applikation:
+	-	Notizen können neu angelegt, bearbeitet und gelöscht werden
+	-	Notizen können kategorisiert werden
+	-	Notizen kann ein Status und Verfallsdatum zugewiesen werden
+	- 	Notizen können an User zugewiesen werden
+	-	Notizen können veröffentlicht werden
+	-	Notizen können kommentiert werden
+	-	Kategorien können neu erstellt werden
+	-	Log In mit und ohne Facebook, Google und GitHub möglich
+	-	Suchfunktion für Notizen
+	-	Import und Export von Notizen als JSon Dokumente
 
 * Ruby version 1.9.3
 * Rails 4.0.0
