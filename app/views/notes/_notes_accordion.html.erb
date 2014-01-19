@@ -11,7 +11,18 @@
 			</div>
 			<div id= <%="collapse_#{action}_#{note.id}" %> class="panel-collapse collapse in">
 				<div class="panel-body profile_buttons">
+					<p>
 					<%= note.message%>
+					</p>
+					<p>Satus:
+						<%= note.status.name %>
+					</p>
+					<p>zu erledigen bis:
+						<%= note.due_at %>
+					</p>
+					<p>Kategorie:
+						<%= note.category.name %>
+					</p>
 					<% if current_user == note.author %>
 					<%= button_to "löschen", note_path(note), :class => "btn btn-default btn-sm", method: :delete, data: { confirm: 'wirklich löschen?' } %>
 					<%= button_to "bearbeiten", edit_note_path(note),:class => "btn btn-default btn-sm", method: :get %>

@@ -18,7 +18,7 @@
     resources :comments, :only => [:create]
   end
 
-  resources :categories, :only => [:create]
+  resources :categories
 
   resources :user
 

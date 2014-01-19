@@ -1,15 +1,19 @@
 class CategoriesController < ApplicationController
 	
 	def new
-		@category = Category.new
-		
+		@category = Category.new		
 	end
 
 	def create
-		
 		@category = Category.new(category_params)
-		@category.save
-		redirect_to :back
+
+      if @category.save
+        redirect_to new_note_path
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @category.errors, status: :unprocessable_entity }
+        redirect_to new_note_path
+      end
 	end
 
 	def index
