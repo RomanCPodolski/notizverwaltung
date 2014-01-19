@@ -16,7 +16,8 @@ class User < ActiveRecord::Base
    has_many :notes_assigend, inverse_of: :signed_to, foreign_key: :signed_to_id , :class_name => "Note"
    has_many :comments
 
-   # 
+   # This method will search for an User according to the facebook auth token,
+   # if no user is returned by the database, a new one will ne created and returned
    def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
     unless user
@@ -30,6 +31,9 @@ class User < ActiveRecord::Base
    user
  end
 
+
+   # This method will search for an User according to the github auth token,
+   # if no user is returned by the database, a new one will ne created and returned
  def self.find_for_github_oauth(auth, signed_in_resource=nil)
 
   user = User.where(:provider => auth.provider, :uid => auth.id).first
@@ -52,6 +56,8 @@ class User < ActiveRecord::Base
   user 
 end
 
+   # This method will search for an User according to the google-oauth2 auth token,
+   # if no user is returned by the database, a new one will ne created and returned
 def self.find_for_google_oauth2(access_token, signed_in_resource=nil)
   data = access_token.info
   user = User.where(:email => data["email"]).first
