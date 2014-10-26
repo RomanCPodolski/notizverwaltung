@@ -1,4 +1,4 @@
-Dominik Irimi (irimi@hm.edu)
+Dominik
 - bearbeiten/löschen von Notizen
 - Suchfunktion von Notizen
 - Import/Export von Notizen als JSON Dokumente
