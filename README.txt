@@ -39,7 +39,7 @@ schoenwe@hm.edu
 
 The MIT License (MIT)
 
-Copyright (c) 2013 Roman Christian Podolski, Janek Schoenwetter, Dominik Irimi
+Copyright (c) 2013 Roman Christian Podolski, Janek Schoenwetter, Dominik
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
