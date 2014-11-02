@@ -33,8 +33,7 @@ podolski@hm.edu
 schoenwe@hm.edu
 
 
-=== Dominik Irimi
-irimi@hm.edu
+=== Dominik
 
 == MIT - License
 
